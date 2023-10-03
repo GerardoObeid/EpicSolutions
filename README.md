@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Epic Solutions es un proyecto dedicado a empoderar a los sectores más vulnerables de México. Nuestra misión es identificar sus necesidades y proporcionarles las herramientas y el apoyo necesarios para que puedan satisfacer esas necesidades por sí mismos. En lugar de simplemente darles productos, estamos comprometidos a ayudarles a crear soluciones sostenibles que no solo beneficien a sus comunidades, sino que también les permitan generar ingresos y prosperar en el futuro.
+Epic Solutions es un proyecto dedicado a empoderar a los sectores más vulnerables de México. Nuestra misión es identificar sus necesidades y proporcionarles las herramientas y el apoyo necesarios (por medio de estudiantes o empresas que quieran formar parte de los proyectos), para que puedan satisfacer esas necesidades por sí mismos. En lugar de simplemente darles productos, estamos comprometidos a ayudarles a crear soluciones sostenibles que no solo beneficien a sus comunidades, sino que también les permitan generar ingresos y prosperar en el futuro.
 
 ## Objetivos
 
