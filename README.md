@@ -3,6 +3,7 @@
 ## Descripción del Proyecto
 
 Epic Solutions es un proyecto dedicado a empoderar a los sectores más vulnerables de México. Nuestra misión es identificar sus necesidades y proporcionarles las herramientas y el apoyo necesarios (por medio de estudiantes o empresas que quieran formar parte de los proyectos), para que puedan satisfacer esas necesidades por sí mismos. En lugar de simplemente darles productos, estamos comprometidos a ayudarles a crear soluciones sostenibles que no solo beneficien a sus comunidades, sino que también les permitan generar ingresos y prosperar en el futuro.
+Asi mismo, vamos a publicar proyectos locales (que suelen verse como empleos informales en México) en donde toda la comunidad tanto dentro como fuera del ITAM pueda solicitar estos servicios. Crearemos un círculo de apoyo en donde una pequeña parte de las ganancias van a hacer utlizadas para fondear los proyectos que se tienen que desarollar.
 
 ## Objetivos
 
