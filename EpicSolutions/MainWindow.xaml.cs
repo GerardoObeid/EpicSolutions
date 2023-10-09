@@ -57,11 +57,16 @@ namespace EpicSolutions
             }
             else
             {
-                mainPage mp = new mainPage();
+                mainPage mp = new mainPage(tbUsuario.Text);
                 mp.Show();
                 this.Hide();
             }
 
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

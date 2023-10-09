@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Collections.Generic;
 
 namespace EpicSolutions
 {
@@ -54,52 +55,67 @@ namespace EpicSolutions
             string newHash = HashPassword(password);
             return string.Equals(newHash, hashedPassword, StringComparison.OrdinalIgnoreCase);
         }
-        public string makeQuery(string query)
+        public List<Dictionary<string, string>> makeQuery(string query)
         {
-            string res = "not_found";
-            SqlDataReader read;
-            SqlCommand cmd;
+            List<Dictionary<string, string>> resultList = new List<Dictionary<string, string>>();
 
-            cmd = new SqlCommand(query, conn);
-            read = cmd.ExecuteReader();
-            if (read.Read())
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataReader read = cmd.ExecuteReader();
+
+            while (read.Read())
             {
-                res = read.GetString(0);
+                Dictionary<string, string> resultDictionary = new Dictionary<string, string>();
+                for (int i = 0; i < read.FieldCount; i++)
+                {
+                    string columnName = read.GetName(i);
+                    string columnValue = read[i].ToString();
+                    resultDictionary[columnName] = columnValue;
+                }
+                resultList.Add(resultDictionary);
             }
+
             read.Close();
-            return res;
+            return resultList;
         }
+
         public int handleLogin(String user, String pwd)
         {
             int ans = 0;
             string query = $"SELECT hashedPassword from usuario where correo='{user}'";
-            string qres;
+            List<Dictionary<string, string>> queryResult;
+
 
             try
             {
-                qres = makeQuery(query);
-                if (qres == "not_found")
+                queryResult = makeQuery(query);
+
+                if (queryResult.Count == 0)
                 {
-                    ans = 3;
+                    ans = 3; // Usuario no encontrado
                 }
                 else
                 {
-                    if (VerifyPassword(pwd, qres))
+                    string hashedPassword = queryResult[0].GetValueOrDefault("hashedPassword");
+
+                    if (hashedPassword == null)
                     {
-                        ans = 1;
+                        ans = 3; // Usuario no encontrado
+                    }
+                    else if (VerifyPassword(pwd, hashedPassword))
+                    {
+                        ans = 1; // Contraseña válida
                     }
                     else
                     {
-                        ans = 2;
+                        ans = 2; // Contraseña incorrecta
                     }
                 }
-               
-
             }
             catch (Exception e)
             {
                 MessageBox.Show($"Error {e}");
             }
+
             return ans;
         }
        

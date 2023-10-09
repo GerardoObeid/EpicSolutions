@@ -19,9 +19,10 @@ namespace EpicSolutions
     /// </summary>
     public partial class mainPage : Window
     {
-        public mainPage()
+        public mainPage(string user)
         {
             InitializeComponent();
+            lbUserLoggedIn.Content = $"Bienvenido: {user}";
         }
 
         private void btSeguimiento_Click(object sender, RoutedEventArgs e)
