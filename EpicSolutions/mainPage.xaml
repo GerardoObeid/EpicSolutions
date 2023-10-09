@@ -1,0 +1,106 @@
+﻿<Window x:Class="EpicSolutions.mainPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EpicSolutions"
+        mc:Ignorable="d"
+        Height="658" Width="1378" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Grid Margin="17,113,53,-113">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" MinHeight="67" />
+                <RowDefinition Height="Auto" MinHeight="66.54" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Bienvenido a EPIC Solutions" FontWeight="Bold" FontSize="22" Margin="10,10,10,10" />
+
+            <TextBlock Grid.Row="1" Text="Descripción del Proyecto" FontWeight="Bold" FontSize="16" Margin="10,10,10,10" />
+            <TextBlock Grid.Row="2" Margin="55,0,10,42" Grid.RowSpan="3" TextWrapping="Wrap" >
+        EPIC Solutions es un proyecto comprometido con el empoderamiento de los sectores más vulnerables en México. Nuestra misión es identificar las necesidades específicas de estas comunidades y proporcionarles las herramientas y el apoyo necesarios para que puedan abordar esas necesidades de manera autónoma. En lugar de simplemente ofrecer productos, nos enfocamos en ayudarles a crear soluciones sostenibles que beneficien a sus comunidades y les brinden la oportunidad de generar ingresos y prosperar en el futuro.
+            </TextBlock>
+
+            <TextBlock Grid.Row="3" Text="Objetivos" FontWeight="Bold" FontSize="16" Margin="20,59,0,40" Grid.RowSpan="2" />
+            <TextBlock Grid.Row="4" Margin="37,29,-37,38" Grid.RowSpan="3">
+        Nuestros principales objetivos son:
+        <LineBreak />
+        1. Identificar las necesidades específicas de las comunidades vulnerables en México.
+        <LineBreak />
+        2. Facilitar el acceso a recursos, conocimientos y tecnologías que les permitan desarrollar soluciones innovadoras.
+        <LineBreak />
+        3. Fomentar la capacitación y el desarrollo de habilidades dentro de estas comunidades.
+        <LineBreak />
+        4. Promover la creación de productos y servicios que puedan generar ingresos y crecimiento económico a largo plazo.
+            </TextBlock>
+
+            <TextBlock Grid.Row="6" Text="¿Cómo puedes contribuir?" FontWeight="Bold" FontSize="16" Margin="10,16,10,-4" />
+            <TextBlock Grid.Row="6" Margin="55,43,26,-45" TextWrapping="Wrap" >
+        EPIC Solutions es un proyecto en constante evolución, y estamos abiertos a la colaboración de personas comprometidas y apasionadas. Si deseas unirte a nosotros en esta misión de empoderar a las comunidades vulnerables de México, aquí encontrarás información sobre cómo puedes contribuir, así como recursos y herramientas para comenzar.
+        <LineBreak />
+        Únete a nosotros en este viaje para hacer una diferencia positiva en la vida de aquellos que más lo necesitan. ¡Juntos, podemos lograr soluciones épicas!
+            </TextBlock>
+
+            <TextBlock Grid.Row="6" Text="Nacimiento de EPIC Solutions" FontWeight="Bold" FontSize="16" Margin="10,111,10,-93" />
+            <TextBlock Grid.Row="6" Margin="37,141,44,-145" TextWrapping="Wrap" >
+        En 2022, en México, 32.4 millones de personas trabajan en la informalidad, y existen 4.9 millones de Pequeñas y Medianas Empresas (PyMES). Ambos sectores enfrentan el desafío de atraer clientes y darse a conocer. Como respuesta a estos retos, surgió EPIC Solutions, una plataforma digital que busca conectar la oferta y la demanda de productos y servicios de todo tipo, al mismo tiempo que impulsa la economía local de millones de familias mexicanas.
+            </TextBlock>
+        </Grid>
+        <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFD6E8A3"/>
+                    <GradientStop Color="#FFECEDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="btSolicitudes" Content="Solicitudes" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="258" Margin="942,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btSolicitudes_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF40E686" Offset="0.143"/>
+                    <GradientStop Color="#FFC8FFDF" Offset="0.653"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btPedidos" Content="Pedidos Activos" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="258" Margin="680,2,0,0" Click="btRegistrar_Copy_Click" FontSize="24" FontFamily="Garamond" FontWeight="Bold">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF40E686" Offset="0.143"/>
+                    <GradientStop Color="#FFC8FFDF" Offset="0.653"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btSeguimiento" Content="Seguimiento" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="258" Margin="420,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btSeguimiento_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF40E686" Offset="0.143"/>
+                    <GradientStop Color="#FFC8FFDF" Offset="0.653"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btRegistrar" Content="Crear Usuarios" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="258" Margin="160,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btRegistrar_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF40E686" Offset="0.143"/>
+                    <GradientStop Color="#FFC8FFDF" Offset="0.653"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btLogOut" Content="LogOut" HorizontalAlignment="Left" VerticalAlignment="Top" Height="47" Width="87" Margin="1264,10,0,0"  FontSize="18" FontWeight="Bold" Click="btLogOut_Click" BorderThickness="0,0,0,0" Background="{x:Null}"/>
+        <Label x:Name="lbUserLoggedIn" Content="" HorizontalAlignment="Left" Margin="56,82,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Center" Margin="0,77,0,0" Stroke="Black" Width="1378">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/mp.jpeg" Stretch="UniformToFill" Opacity="0.2"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+    </Grid>
+</Window>
