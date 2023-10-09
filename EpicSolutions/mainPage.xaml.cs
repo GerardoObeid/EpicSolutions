@@ -27,22 +27,20 @@ namespace EpicSolutions
 
         private void btSeguimiento_Click(object sender, RoutedEventArgs e)
         {
-
+            FollowUp fp = new FollowUp();
+            fp.Show();  
         }
 
         private void btSolicitudes_Click(object sender, RoutedEventArgs e)
         {
-
+            Pending pd = new Pending(); 
+            pd.Show();
         }
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btRegistrar_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
+            Register reg = new Register();
+            reg.Show();
         }
 
         private void btLogOut_Click(object sender, RoutedEventArgs e)
@@ -52,6 +50,11 @@ namespace EpicSolutions
             this.Hide();    
         }
 
-     
+        //Pedidos button
+        private void btRegistrar_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Active ac = new Active();   
+            ac.Show();
+        }
     }
 }
