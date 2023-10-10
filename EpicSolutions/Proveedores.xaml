@@ -1,0 +1,34 @@
+﻿<Window x:Class="EpicSolutions.Proveedores"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EpicSolutions"
+        mc:Ignorable="d"
+        Title="Proveedores" Height="658" Width="1298" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEDF1ED"/>
+            <GradientStop Color="#FF69954B" Offset="1"/>
+            <GradientStop Color="#FF60C020" Offset="0.896"/>
+            <GradientStop Color="#FEAAE4E6" Offset="0.044"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFD6E8A3"/>
+                    <GradientStop Color="#FFECEDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="370,383,576,78" Background="{x:Null}">
+        </ListBox>
+        <ComboBox x:Name="cbAreas" HorizontalAlignment="Left" Margin="104,247,0,0" VerticalAlignment="Top" Width="255" Height="53"/>
+        <Label x:Name="lbAreas" Content="Seleccione un área:" HorizontalAlignment="Left" Margin="108,199,0,0" VerticalAlignment="Top" FontSize="20" Width="207"/>
+        <TextBlock x:Name="tbInfoProveedor" HorizontalAlignment="Left" Margin="898,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="396" Width="333"/>
+        <Label x:Name="lbPoveedoresTitulo" Content="PROVEEDORES" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="lbAreas_Copy" Content="Seleccione un proveedor:" HorizontalAlignment="Left" Margin="372,329,0,0" VerticalAlignment="Top" FontSize="20" Width="277"/>
+    </Grid>
+</Window>

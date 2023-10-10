@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EpicSolutions"
         mc:Ignorable="d"
-        Title="MainWindow" Height="658" Width="1378" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="MainWindow" Height="658" Width="1263" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
 
     <Grid>
 
@@ -15,7 +15,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Rectangle HorizontalAlignment="Left" Height="642" Stroke="Black" VerticalAlignment="Center" Width="1368" RadiusX="10" RadiusY="9">
+        <Rectangle HorizontalAlignment="Left" Height="642" Stroke="Black" VerticalAlignment="Center" Width="1271" RadiusX="10" RadiusY="9">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/epicmain.jpg.png" Opacity="0.2"/>
             </Rectangle.Fill>
@@ -24,22 +24,22 @@
         <Label x:Name="lbTiulo" Content="EPIC Solutions" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="72" FontWeight="Bold" FontFamily="Times New Roman" Width="528" Height="90" HorizontalContentAlignment="Center"/>
         <Label Content="INICIAR SESIÓN" HorizontalAlignment="Left" Margin="201,148,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.453,1.696"/>
 
-        <CheckBox x:Name="showPassword" Unchecked="ShowPassword_Unchecked" Checked="ShowPassword_Checked" RenderTransformOrigin="5,5" Margin="459,332,821,214" Content=""/>
+        <CheckBox x:Name="showPassword" Unchecked="ShowPassword_Unchecked" Checked="ShowPassword_Checked" RenderTransformOrigin="5,5" Margin="441,332,705,214" Content=""/>
         <Button x:Name="btLogin" Content="Login" HorizontalAlignment="Left" Margin="382,380,0,0" VerticalAlignment="Top"  Background="#FF48E21A" FontSize="14" FontWeight="Bold" BorderThickness="1,1,1,1" Height="33" Width="72" Click="btLogin_Click"/>
         <Label Content="Usuario: " HorizontalAlignment="Left" Margin="79,230,0,0" VerticalAlignment="Top"/>
         <Label Content="Contraseña: " HorizontalAlignment="Left" Margin="79,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.558,2.937"/>
         <Label Content="Ver Contraseña" HorizontalAlignment="Left" Margin="346,331,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="308" Margin="794,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
+        <Rectangle HorizontalAlignment="Left" Height="308" Margin="758,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#FF70F97D" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
-        <StackPanel Margin="10,230,906,304">
+        <StackPanel Margin="10,230,809,304">
             <TextBox x:Name="tbUsuario" Width="292" Height="39" Margin="159,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"/>
             <PasswordBox x:Name="tbpassword" PasswordChar="*" Width="292" Height="39" Margin="159,10,0,0" FontSize="18"/>
             <TextBox x:Name="tbpasswordText" Visibility="Collapsed" Width="292" Height="39" Margin="159,10,0,0"/>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Left" Margin="851,215,0,0" TextWrapping="Wrap" Text="&quot;En el vasto universo de EPIC Solutions, las estrellas de la comunidad brillan como luces de esperanza, iluminando caminos hacia un mañana lleno de oportunidades y prosperidad.&quot;" VerticalAlignment="Top" Height="192" Width="336" FontSize="18" FontWeight="Bold" TextAlignment="Center" OpacityMask="#FFF7F9F5" Foreground="#FF131C15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="823,215,0,0" TextWrapping="Wrap" Text="&quot;En el vasto universo de EPIC Solutions, las estrellas de la comunidad brillan como luces de esperanza, iluminando caminos hacia un mañana lleno de oportunidades y prosperidad.&quot;" VerticalAlignment="Top" Height="192" Width="336" FontSize="18" FontWeight="Bold" TextAlignment="Center" OpacityMask="#FFF7F9F5" Foreground="#FF131C15"/>
 
 
     </Grid>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EpicSolutions"
         mc:Ignorable="d"
-        Title="Pending" Height="658" Width="1378" WindowStartupLocation="CenterScreen">
+        Title="Pending" Height="658" Width="1298" WindowStartupLocation="CenterScreen">
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
             <Rectangle.Fill>
