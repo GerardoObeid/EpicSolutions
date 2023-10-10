@@ -34,7 +34,7 @@
                 <SolidColorBrush Color="#FF70F97D" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
-        <StackPanel Margin="10,230,906,304">
+        <StackPanel Margin="10,230,809,304">
             <TextBox x:Name="tbUsuario" Width="292" Height="39" Margin="159,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"/>
             <PasswordBox x:Name="tbpassword" PasswordChar="*" Width="292" Height="39" Margin="159,10,0,0" FontSize="18"/>
             <TextBox x:Name="tbpasswordText" Visibility="Collapsed" Width="292" Height="39" Margin="159,10,0,0"/>

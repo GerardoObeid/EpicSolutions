@@ -19,10 +19,12 @@ namespace EpicSolutions
     /// </summary>
     public partial class mainPage : Window
     {
-        public mainPage(string user)
+        dbFunctions dbManager;
+        public mainPage(string user, dbFunctions dbManager)
         {
             InitializeComponent();
             lbUserLoggedIn.Content = $"Bienvenido: {user}";
+            this.dbManager = dbManager;
         }
 
         private void btSeguimiento_Click(object sender, RoutedEventArgs e)
@@ -55,6 +57,12 @@ namespace EpicSolutions
         {
             Active ac = new Active();   
             ac.Show();
+        }
+
+        private void btProveedores_Click(object sender, RoutedEventArgs e)
+        {
+            Proveedores p = new Proveedores(dbManager);
+            p.Show  ();
         }
     }
 }

@@ -57,7 +57,7 @@ namespace EpicSolutions
             }
             else
             {
-                mainPage mp = new mainPage(tbUsuario.Text);
+                mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
                 mp.Show();
                 this.Hide();
             }
