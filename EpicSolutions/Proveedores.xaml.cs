@@ -20,10 +20,70 @@ namespace EpicSolutions
     public partial class Proveedores : Window
     {
         dbFunctions dbManager;
+        List<Dictionary<string, string>> res;
+        List <RadioButton> radioButtons = new List<RadioButton>();
+
         public Proveedores(dbFunctions dbManager)
         {
             InitializeComponent();
+            List<string> areas = new List<string>(); 
             this.dbManager = dbManager;
+            res = dbManager.makeQuery("SELECT distinct(area) from proveedor");
+            foreach (Dictionary <string, string> i in res)
+            {
+                areas.Add(i["area"]);
+            }
+            foreach(string area in areas)
+            {
+                cbAreas.Items.Add(area);
+            }
+        }
+
+        private void cbAreas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            res = dbManager.makeQuery($"SELECT c.nombre from proveedor p inner join cliente c on c.IdCliente=p.idCliente where area='{cbAreas.SelectedValue}'");
+            lboxProveedores.Items.Clear();
+            foreach (Dictionary<string, string> i in res)
+            {
+                RadioButton rb = new RadioButton();
+                rb.Content = (i["nombre"]);
+
+                radioButtons.Add(rb);
+                lboxProveedores.Items.Add(rb);
+            }
+        }
+
+        private void lboxProveedores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btSeleccionar_Click(object sender, RoutedEventArgs e)
+        {
+            tbInfoProveedor.Text = "";
+            StringBuilder stb = new StringBuilder();
+
+            foreach (RadioButton rb in radioButtons)
+            {
+                if (rb.IsChecked == true)
+                {
+                    lbProveedorSeleccionado.Content = $"Se seleccionó: {rb.Content.ToString()}";
+                    
+                    res = dbManager.makeQuery($"select * from cliente c inner join proveedor p on p.idCliente=c.idCliente where c.nombre='{rb.Content.ToString()}'");
+                    foreach (Dictionary<string, string> entry in res)
+                    {
+                        foreach(string key in entry.Keys)
+                        {
+                            stb.Append(key);
+                            stb.Append(": ");
+                            stb.Append(entry[key]);
+                            stb.Append('\n');
+                        }
+                    }
+                }
+            }
+            tbInfoProveedor.Text = stb.ToString();
+            rInfoContrast.Visibility = Visibility.Visible;
         }
     }
 }

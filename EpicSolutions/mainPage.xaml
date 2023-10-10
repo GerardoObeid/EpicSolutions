@@ -54,7 +54,7 @@
                 En 2022, en México, 32.4 millones de personas trabajan en la informalidad, y existen 4.9 millones de Pequeñas y Medianas Empresas (PyMES). Ambos sectores enfrentan el desafío de atraer clientes y darse a conocer. Como respuesta a estos retos, surgió EPIC Solutions, una plataforma digital que busca conectar la oferta y la demanda de productos y servicios de todo tipo, al mismo tiempo que impulsa la economía local de millones de familias mexicanas.
             </TextBlock>
         </Grid>
-        <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
+        <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1254">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFD6E8A3"/>
