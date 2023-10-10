@@ -26,32 +26,32 @@
 
             <TextBlock Grid.Row="1" Text="Descripción del Proyecto" FontWeight="Bold" FontSize="16" Margin="10,10,10,10" />
             <TextBlock Grid.Row="2" Margin="55,0,10,42" Grid.RowSpan="3" TextWrapping="Wrap" >
-        EPIC Solutions es un proyecto comprometido con el empoderamiento de los sectores más vulnerables en México. Nuestra misión es identificar las necesidades específicas de estas comunidades y proporcionarles las herramientas y el apoyo necesarios para que puedan abordar esas necesidades de manera autónoma. En lugar de simplemente ofrecer productos, nos enfocamos en ayudarles a crear soluciones sostenibles que beneficien a sus comunidades y les brinden la oportunidad de generar ingresos y prosperar en el futuro.
+                EPIC Solutions es una plataforma digital que busca potenciar la actividad de microempresarios e incluso el comercio informal al conectar oferta y demanda en productos o servicios de todo tipo. A través de nuestra plataforma digital, los comerciantes podrán darse de alta y proveer información de sus negocios para ser visibles por habitantes cercanos a su zona (ya que estará organizada geográficamente). Además, se podrá hacer lo mismo con servicios de todo tipo como trabajos del hogar, impartición de cursos y más. De la misma manera, los usuarios podrán darse de alta para explorar las distintas categorías que les interesen dependiendo de sus necesidades para encontrar el negocio que mejor se adapte a ellos en el momento.
             </TextBlock>
 
             <TextBlock Grid.Row="3" Text="Objetivos" FontWeight="Bold" FontSize="16" Margin="20,59,0,40" Grid.RowSpan="2" />
             <TextBlock Grid.Row="4" Margin="37,29,-37,38" Grid.RowSpan="3">
-        Nuestros principales objetivos son:
-        <LineBreak />
-        1. Identificar las necesidades específicas de las comunidades vulnerables en México.
-        <LineBreak />
-        2. Facilitar el acceso a recursos, conocimientos y tecnologías que les permitan desarrollar soluciones innovadoras.
-        <LineBreak />
-        3. Fomentar la capacitación y el desarrollo de habilidades dentro de estas comunidades.
-        <LineBreak />
-        4. Promover la creación de productos y servicios que puedan generar ingresos y crecimiento económico a largo plazo.
+                Nuestros principales objetivos son:
+            <LineBreak />
+                1. Crear una red sólida de proveedores de productos y servicios de toda índole para ofrecer al público
+            <LineBreak />
+                2. Incentivar el consumo local en los usuarios de todas las zonas geográficas
+            <LineBreak />
+                3. Propiciar el pleno desarrollo de microempresarios y negocios informales para apoyarlos en su crecimiento
+            <LineBreak />
+                4. Generar un servicio de calidad para los usuarios de nuestra aplicación
             </TextBlock>
 
             <TextBlock Grid.Row="6" Text="¿Cómo puedes contribuir?" FontWeight="Bold" FontSize="16" Margin="10,16,10,-4" />
             <TextBlock Grid.Row="6" Margin="55,43,26,-45" TextWrapping="Wrap" >
-        EPIC Solutions es un proyecto en constante evolución, y estamos abiertos a la colaboración de personas comprometidas y apasionadas. Si deseas unirte a nosotros en esta misión de empoderar a las comunidades vulnerables de México, aquí encontrarás información sobre cómo puedes contribuir, así como recursos y herramientas para comenzar.
-        <LineBreak />
-        Únete a nosotros en este viaje para hacer una diferencia positiva en la vida de aquellos que más lo necesitan. ¡Juntos, podemos lograr soluciones épicas!
+                EPIC Solutions es un proyecto en constante evolución, y estamos abiertos a la colaboración de personas comprometidas y apasionadas. Si deseas unirte a nosotros para hacer crecer tu negocio sin grandes complicaciones, aquí encontrarás información sobre cómo puedes ser parte de la familia EPIC Solutions para ofrecer tus productos cada vez a más personas. 
+            <LineBreak />
+                Únete a nosotros en este viaje para hacer una diferencia positiva en el desarrollo de la economía mexicana. ¡Juntos, podemos lograr soluciones épicas!
             </TextBlock>
 
             <TextBlock Grid.Row="6" Text="Nacimiento de EPIC Solutions" FontWeight="Bold" FontSize="16" Margin="10,111,10,-93" />
             <TextBlock Grid.Row="6" Margin="37,141,44,-145" TextWrapping="Wrap" >
-        En 2022, en México, 32.4 millones de personas trabajan en la informalidad, y existen 4.9 millones de Pequeñas y Medianas Empresas (PyMES). Ambos sectores enfrentan el desafío de atraer clientes y darse a conocer. Como respuesta a estos retos, surgió EPIC Solutions, una plataforma digital que busca conectar la oferta y la demanda de productos y servicios de todo tipo, al mismo tiempo que impulsa la economía local de millones de familias mexicanas.
+                En 2022, en México, 32.4 millones de personas trabajan en la informalidad, y existen 4.9 millones de Pequeñas y Medianas Empresas (PyMES). Ambos sectores enfrentan el desafío de atraer clientes y darse a conocer. Como respuesta a estos retos, surgió EPIC Solutions, una plataforma digital que busca conectar la oferta y la demanda de productos y servicios de todo tipo, al mismo tiempo que impulsa la economía local de millones de familias mexicanas.
             </TextBlock>
         </Grid>
         <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
