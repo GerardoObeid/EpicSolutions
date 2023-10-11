@@ -5,16 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EpicSolutions"
         mc:Ignorable="d"
-        Title="Proveedores" Height="658" Width="1298" WindowStartupLocation="CenterScreen">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FFEDF1ED"/>
-            <GradientStop Color="#FF69954B" Offset="1"/>
-            <GradientStop Color="#FF60C020" Offset="0.896"/>
-            <GradientStop Color="#FEAAE4E6" Offset="0.044"/>
-        </LinearGradientBrush>
-    </Window.Background>
+        Title="Proveedores" Height="658" Width="1246" WindowStartupLocation="CenterScreen">
+
     <Grid>
+        <Rectangle HorizontalAlignment="Center" Margin="0,75,0,2" Stroke="Black" Width="1254">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/mp.jpeg" Stretch="UniformToFill" Opacity="0.2"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -23,12 +21,14 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="370,383,576,78" Background="{x:Null}">
-        </ListBox>
-        <ComboBox x:Name="cbAreas" HorizontalAlignment="Left" Margin="104,247,0,0" VerticalAlignment="Top" Width="255" Height="53"/>
-        <Label x:Name="lbAreas" Content="Seleccione un área:" HorizontalAlignment="Left" Margin="108,199,0,0" VerticalAlignment="Top" FontSize="20" Width="207"/>
-        <TextBlock x:Name="tbInfoProveedor" HorizontalAlignment="Left" Margin="898,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="396" Width="333"/>
+        <ListBox x:Name="lboxProveedores" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="103,356,843,105" Background="{x:Null}" SelectionChanged="lboxProveedores_SelectionChanged"/>
+        <ComboBox x:Name="cbAreas" HorizontalAlignment="Left" Margin="104,220,0,0" VerticalAlignment="Top" Width="255" Height="36" SelectionChanged="cbAreas_SelectionChanged"/>
+        <Label x:Name="lbAreas" Content="Seleccione un área:" HorizontalAlignment="Left" Margin="108,172,0,0" VerticalAlignment="Top" FontSize="20" Width="207"/>
+        <TextBlock x:Name="tbInfoProveedor" HorizontalAlignment="Left" Margin="846,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="348" Width="390" FontFamily="Times New Roman" FontSize="14"/>
         <Label x:Name="lbPoveedoresTitulo" Content="PROVEEDORES" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
-        <Label x:Name="lbAreas_Copy" Content="Seleccione un proveedor:" HorizontalAlignment="Left" Margin="372,329,0,0" VerticalAlignment="Top" FontSize="20" Width="277"/>
+        <Label x:Name="lbAreas_Copy" Content="Seleccione un proveedor:" HorizontalAlignment="Left" Margin="105,0,0,0" VerticalAlignment="Center" FontSize="20" Width="277"/>
+        <Label x:Name="lbProveedorSeleccionado" Content="" HorizontalAlignment="Left" Margin="809,206,0,0" VerticalAlignment="Top" Width="297" FontFamily="Times New Roman" FontSize="18"/>
+        <Button x:Name="btSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="274,546,0,0" VerticalAlignment="Top" Height="44" Width="83" Background="#FF228BE8" Click="btSeleccionar_Click"/>
+        <Rectangle x:Name="rInfoContrast" HorizontalAlignment="Left" Height="367" Margin="791,206,0,0" Stroke="Black" VerticalAlignment="Top" Width="390" Fill="#FFFDFDFD" Opacity="0.2" Visibility="Hidden" RadiusX="20" RadiusY="20"/>
     </Grid>
 </Window>
