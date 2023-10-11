@@ -22,6 +22,7 @@ namespace EpicSolutions
         dbFunctions dbManager;
         List<Dictionary<string, string>> res;
         List <RadioButton> radioButtons = new List<RadioButton>();
+        StringBuilder stb = new StringBuilder();
 
         public Proveedores(dbFunctions dbManager)
         {
@@ -60,16 +61,21 @@ namespace EpicSolutions
 
         private void btSeleccionar_Click(object sender, RoutedEventArgs e)
         {
+            stb.Clear();
             tbInfoProveedor.Text = "";
-            StringBuilder stb = new StringBuilder();
 
             foreach (RadioButton rb in radioButtons)
             {
                 if (rb.IsChecked == true)
                 {
                     lbProveedorSeleccionado.Content = $"Se seleccionó: {rb.Content.ToString()}";
-                    
-                    res = dbManager.makeQuery($"select * from cliente c inner join proveedor p on p.idCliente=c.idCliente where c.nombre='{rb.Content.ToString()}'");
+
+                    res = dbManager.makeQuery($"select c.nombre, p.nombre as servicio, c.direccion, c.telefono, " +
+                        $"p.telefono as telefonoEmpresa, p.direccion as direccionEmpresa, p.area" +
+                        $" from cliente c " +
+                        $"inner join proveedor p " +
+                        $"on p.idCliente=c.idCliente " +
+                        $"where c.nombre='{rb.Content.ToString()}'");
                     foreach (Dictionary<string, string> entry in res)
                     {
                         foreach(string key in entry.Keys)
@@ -80,10 +86,13 @@ namespace EpicSolutions
                             stb.Append('\n');
                         }
                     }
+                    tbInfoProveedor.Text = stb.ToString();
+                    rInfoContrast.Visibility = Visibility.Visible;
                 }
+                rb.IsChecked = false;
+
             }
-            tbInfoProveedor.Text = stb.ToString();
-            rInfoContrast.Visibility = Visibility.Visible;
+            
         }
     }
 }
