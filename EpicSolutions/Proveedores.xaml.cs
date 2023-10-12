@@ -62,6 +62,7 @@ namespace EpicSolutions
         private void btSeleccionar_Click(object sender, RoutedEventArgs e)
         {
             stb.Clear();
+            lbProveedorSeleccionado.Content = "Ningún proveedor se ha seleccionado";
             tbInfoProveedor.Text = "";
 
             foreach (RadioButton rb in radioButtons)

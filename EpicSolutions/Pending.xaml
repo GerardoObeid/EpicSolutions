@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="Pending" Height="658" Width="1298" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Rectangle HorizontalAlignment="Center" Margin="0,75,0,2" Stroke="Black" Width="1254">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/mp.jpeg" Stretch="UniformToFill" Opacity="0.2"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
