@@ -9,15 +9,15 @@
 
     <Grid>
 
-        <Rectangle HorizontalAlignment="Left" Height="308" Margin="79,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="441" StrokeThickness="0" RadiusX="20" RadiusY="20">
+        <Rectangle HorizontalAlignment="Left" Height="389" Margin="79,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="441" StrokeThickness="0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#FF70F97D" Opacity="0.5"/>
+                <SolidColorBrush Color="#FFE9F068" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
 
         <Rectangle HorizontalAlignment="Left" Height="642" Stroke="Black" VerticalAlignment="Center" Width="1271" RadiusX="10" RadiusY="9">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/epicmain.jpg.png" Opacity="0.2"/>
+                <ImageBrush ImageSource="/mp.jpeg" Opacity="0.2"/>
             </Rectangle.Fill>
         </Rectangle>
 
@@ -29,9 +29,9 @@
         <Label Content="Usuario: " HorizontalAlignment="Left" Margin="79,230,0,0" VerticalAlignment="Top"/>
         <Label Content="Contraseña: " HorizontalAlignment="Left" Margin="79,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.558,2.937"/>
         <Label Content="Ver Contraseña" HorizontalAlignment="Left" Margin="346,331,0,0" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="308" Margin="758,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
+        <Rectangle HorizontalAlignment="Left" Height="389" Margin="758,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
-                <SolidColorBrush Color="#FF70F97D" Opacity="0.5"/>
+                <SolidColorBrush Color="#FFE9F068" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
         <StackPanel Margin="10,230,809,304">
