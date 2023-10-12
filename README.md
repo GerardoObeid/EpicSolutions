@@ -34,10 +34,10 @@ La misión de EPIC Solutions es impulsar a todos los microempresarios, tanto for
 
 ## Developers:
 ### Senior Developers:
-    Gerardo Obeid Guzmán
-    Santiago Jaramillo Franzoni
+Gerardo Obeid Guzmán
+Santiago Jaramillo Franzoni
 ### Project Manager:
-    Nicolas Aceves
-    Patricio Silva
+Nicolas Aceves
+Patricio Silva
 ### Creative & Desing Leader  
-    Maria Fernanda Ramírez
+Maria Fernanda Ramírez
