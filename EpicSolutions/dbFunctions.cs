@@ -55,28 +55,50 @@ namespace EpicSolutions
             string newHash = HashPassword(password);
             return string.Equals(newHash, hashedPassword, StringComparison.OrdinalIgnoreCase);
         }
-        public List<Dictionary<string, string>> makeQuery(string query)
+        public List<Dictionary<string, string>> makeQuery(string query, bool isInsert = false)
         {
+            SqlCommand cmd = new SqlCommand(query, conn);
             List<Dictionary<string, string>> resultList = new List<Dictionary<string, string>>();
 
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataReader read = cmd.ExecuteReader();
-
-            while (read.Read())
+            if (isInsert)
             {
                 Dictionary<string, string> resultDictionary = new Dictionary<string, string>();
-                for (int i = 0; i < read.FieldCount; i++)
+                resultDictionary["RowsAffected"] = "None";
+
+                try
                 {
-                    string columnName = read.GetName(i);
-                    string columnValue = read[i].ToString();
-                    resultDictionary[columnName] = columnValue;
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    resultDictionary["RowsAffected"] = rowsAffected.ToString();
                 }
+                catch (Exception ex)
+                {
+                    
+                }
+
                 resultList.Add(resultDictionary);
             }
+            else
+            {
+                SqlDataReader read = cmd.ExecuteReader();
 
-            read.Close();
+                while (read.Read())
+                {
+                    Dictionary<string, string> resultDictionary = new Dictionary<string, string>();
+                    for (int i = 0; i < read.FieldCount; i++)
+                    {
+                        string columnName = read.GetName(i);
+                        string columnValue = read[i].ToString();
+                        resultDictionary[columnName] = columnValue;
+                    }
+                    resultList.Add(resultDictionary);
+                }
+
+                read.Close();
+            }
+
             return resultList;
         }
+
 
         public int handleLogin(String user, String pwd)
         {

@@ -7,11 +7,8 @@ SELECT * FROM usuario INNER JOIN permiso ON usuario.idUsuario=permiso.idUsuario
 
 INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (1, 10072004, 'Lupita Gutierrez','5554344342', 'lupisgut@gmail.com', 'Coyoacan esquina con Iglesia #13', 0, 'prueba');
 INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (2, 10072004, 'Juan Armando Ruiz','5554344342', 'ruizarmado@gmail.com', 'Coyoacan Cerro del Agua #23', 0, 'prueba');
-INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (3, 10072004, 'Benito Camelo','5554344342', 'camel@gmail.com', 'Coyoacan Cerro del Aire #30', 0, 'prueba');
-INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (4, 10072004, 'Larry Marriata','5554344342', 'marriata@gmail.com', 'Coyoacan Cerro del Hombre #25', 0, 'prueba');
 INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (5, 10072004, 'Samuel Orduña','5554344342', 'samord@gmail.com', 'Álvaro Obregón Iglesia #30', 0, 'prueba');
 INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (6, 10072004, 'Plutarco Calles','5554344342', 'placall@gmail.com', 'Álvaro Obregón Cincinati  #25', 0, 'prueba');
-
 INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (7, 10072004, 'Mariana López','5554344342', 'mariana@gmail.com', 'Coyoacan Calle Principal #17', 0, 'prueba');
 INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (8, 10072004, 'Eduardo Ramírez','5554344342', 'eduram@gmail.com', 'Álvaro Obregón Plaza Principal #22', 0, 'prueba');
 INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (9, 10072004, 'Carolina Sánchez','5554344342', 'carosan@gmail.com', 'Coyoacan Jardín Central #35', 0, 'prueba');
@@ -34,8 +31,6 @@ INSERT INTO cliente (idCliente, IdCentro, nombre, telefono, correo, direccion, b
 
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (10, 1, 'Tamales la Lupita','5554344342', 'Centro de Coyoacan con Iglesia #13', 'comida');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (20, 2, 'Globos Ruiseñor','5554344342', 'Oasis Coyoacan', 'fiestas');
-INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (30, 3, 'Tacos el Camello','5554344342', 'Oxxo Miguel Angel de Quevedo', 'comida');
-
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (40, 4, 'Dulces Sabrositos','5554344342', 'Coyoacan Plaza de los Sabores #7', 'dulces');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (50, 5, 'Decoraciones FiestaLoca','5554344342', 'Álvaro Obregón Calle de las Decoraciones #14', 'fiestas');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (60, 6, 'PizzaRica','5554344342','Álvaro Obregón Calle de las Decoraciones #43', 'fiestas');
@@ -51,6 +46,18 @@ INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area)
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (160, 16, 'Decoración Globos','5554344342', 'Álvaro Obregón Decoraciones con Globos #22', 'decoración');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (170, 17, 'Música en Vivo','5554344342', 'Coyoacan Escenario Musical #29', 'música');
 
+
+-- Inserciones en la tabla "bien"
+-- Inserta 60 bienes
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor) VALUES (1, 'Tamal Verde', 5.99, 1, 10);
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor) VALUES (2, 'Catering', 5.99, 1, 10);
+
+INSERT INTO producto (clave, descripcion, capacidadProductiva) VALUES (1, 'Café Americano de Café Aromático', 50);
+INSERT INTO servicio (clave,  giro, disponibilidad, descripcion) VALUES (2, 'Comida', 5,'Servicio de catering para cualquier tipo de evento');
+
 select * from proveedor p right join cliente c  on c.idCliente=p.idCliente;
 select * from cliente;
+select * from bien b full join producto p on b.clave=p.clave full join servicio s on s.clave=b.clave;
 use db_servicio
+select * from usuario
+select nombre from usuario;
