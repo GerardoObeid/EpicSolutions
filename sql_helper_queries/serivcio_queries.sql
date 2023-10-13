@@ -57,5 +57,7 @@ INSERT INTO servicio (clave,  giro, disponibilidad, descripcion) VALUES (2, 'Com
 
 select * from proveedor p right join cliente c  on c.idCliente=p.idCliente;
 select * from cliente;
-select * from bien b inner join producto p, servicio s on b.clave=p.clave, s.clave=b.clave;
+select * from bien b full join producto p on b.clave=p.clave full join servicio s on s.clave=b.clave;
 use db_servicio
+select * from usuario
+select nombre from usuario;

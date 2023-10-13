@@ -41,7 +41,7 @@ namespace EpicSolutions
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            Register reg = new Register();
+            Register reg = new Register(dbManager);
             reg.Show();
         }
 

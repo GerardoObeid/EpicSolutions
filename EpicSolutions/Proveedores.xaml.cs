@@ -27,16 +27,11 @@ namespace EpicSolutions
         public Proveedores(dbFunctions dbManager)
         {
             InitializeComponent();
-            List<string> areas = new List<string>(); 
             this.dbManager = dbManager;
             res = dbManager.makeQuery("SELECT distinct(area) from proveedor");
             foreach (Dictionary <string, string> i in res)
             {
-                areas.Add(i["area"]);
-            }
-            foreach(string area in areas)
-            {
-                cbAreas.Items.Add(area);
+                cbAreas.Items.Add(i["area"]);
             }
         }
 
