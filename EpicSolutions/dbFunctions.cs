@@ -72,7 +72,7 @@ namespace EpicSolutions
                 }
                 catch (Exception ex)
                 {
-                    
+                    resultDictionary["RowsAffected"] = ex.ToString();
                 }
 
                 resultList.Add(resultDictionary);
@@ -103,7 +103,7 @@ namespace EpicSolutions
         public int handleLogin(String user, String pwd)
         {
             int ans = 0;
-            string query = $"SELECT hashedPassword from usuario where correo='{user}'";
+            string query = $"SELECT hashedPassword from usuario where nomUsuario='{user}'";
             List<Dictionary<string, string>> queryResult;
 
 
@@ -119,11 +119,7 @@ namespace EpicSolutions
                 {
                     string hashedPassword = queryResult[0].GetValueOrDefault("hashedPassword");
 
-                    if (hashedPassword == null)
-                    {
-                        ans = 3; // Usuario no encontrado
-                    }
-                    else if (VerifyPassword(pwd, hashedPassword))
+                    if (VerifyPassword(pwd, hashedPassword))
                     {
                         ans = 1; // Contraseña válida
                     }

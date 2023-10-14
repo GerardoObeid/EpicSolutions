@@ -49,7 +49,7 @@ namespace EpicSolutions
             }
             else if(login == 3)
             {
-                MessageBox.Show("EL ususario ingresado no existe");
+                MessageBox.Show("EL usuario ingresado no existe");
             }
             else if (login == 2)
             {
@@ -57,16 +57,44 @@ namespace EpicSolutions
             }
             else
             {
-                mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
-                mp.Show();
-                this.Hide();
+                int res = Int32.Parse(dataBaseManager.makeQuery($"SELECT tempPassword FROM usuario WHERE nomUsuario='{tbUsuario.Text}'")[0]["tempPassword"]);
+                if (res == 0)
+                {
+                    mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
+                    mp.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor actualice su contraseña antes de iniciar sesión");
+                    btLogin.Visibility = Visibility.Collapsed;
+                    btActualizar.Visibility = Visibility.Visible;
+
+                    tbpasswordText.Text = "";
+                    tbpassword.Password = tbpasswordText.Text;
+                    tbpasswordText.Visibility = Visibility.Collapsed;
+                    tbpassword.Visibility = Visibility.Visible;
+                }
+               
             }
 
+        }
+        private void btActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            string query = $"UPDATE usuario set hashedPassword='{dataBaseManager.HashPassword(tbpassword.Password)}'," +
+                $"tempPassword=0 WHERE nomUsuario='{tbUsuario.Text}'";
+            dataBaseManager.makeQuery(query, true);
+
+            mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
+            mp.Show();
+            this.Hide();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        
     }
 }

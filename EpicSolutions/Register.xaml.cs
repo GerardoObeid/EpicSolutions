@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace EpicSolutions
 {
@@ -21,37 +22,59 @@ namespace EpicSolutions
     public partial class Register : Window
     {
         dbFunctions dbManager;
+        Random random = new Random();
+        string user;
         List<Dictionary<string, string>> res;
-        public Register(dbFunctions dbManager)
+        public Register(string user, dbFunctions dbManager)
         {
             this.dbManager = dbManager;
-            res = dbManager.makeQuery("select nombre from usuario");
+            this.user = user;
+
             InitializeComponent();
-            foreach (Dictionary<string, string> i in res)
-            {
-                 cbPermisos.Items.Add(i["nombre"]);
-            }
+            llenaUsuariosPermisos();
             
         }
-
+        public void llenaUsuariosPermisos()
+        {
+            res = dbManager.makeQuery("select nomUsuario from usuario");
+            cbPermisos.Items.Clear();
+            cbRestablecerBaja.Items.Clear();
+            foreach (Dictionary<string, string> i in res)
+            {
+                cbPermisos.Items.Add(i["nomUsuario"]);
+                cbRestablecerBaja.Items.Add(i["nomUsuario"]);
+            }
+        }
         private void tbRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            if (tbCurp.Text != ""  && tbCorreo.Text != "" && tbUsuario.Text != "" && tbTelefono.Text != "" && tbPassword.Text != "")
+            string tempPassword;
+            int NUM_CENTRO = 10072004;
+
+            if (tbNomUsuario.Text != ""  && tbCorreo.Text != "" && tbUsuario.Text != "" && tbTelefono.Text != "")
             {
-                if (dbManager.makeQuery($"insert into usuario (idUsuario, idCentro, nombre, telefono, correo, hashedPassword, temp_password) values" +
-                    $"({Int32.Parse(tbCurp.Text)}, 10072004, '{tbUsuario.Text}'," +
-                    $"'{tbTelefono.Text}', '{tbCorreo.Text}',{tbPassword.Text}, 1)", true) != null)
+                if (Regex.IsMatch(tbCorreo.Text, @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"))
                 {
-                    MessageBox.Show("Alta exitosa \nInformación ha sido copiada para que se propocione al usuario");
-                    System.Threading.Thread.Sleep(1000);
-                    Clipboard.SetText($"Manda las siguientes credenciales usuario: \n\tUSUARIO: {tbCorreo.Text}\n\t CONTRASEÑA: {tbPassword.Text}");
-                    cleanInputs();
-                    
+                    tempPassword = random.Next(100000000, 1000000000).ToString();
+                    string query = $"INSERT INTO usuario (nomUsuario, idCentro, nombre, telefono, correo, hashedPassword, tempPassword) VALUES" +
+                            $"('{tbNomUsuario.Text}', {NUM_CENTRO} , '{tbUsuario.Text}'," +
+                            $"'{tbTelefono.Text}', '{tbCorreo.Text}', '{dbManager.HashPassword(tempPassword)}', 1)";
+
+                    if (dbManager.makeQuery(query, true) != null)
+                    {
+                        MessageBox.Show("Alta exitosa \nInformación ha sido copiada para que se propocione al usuario");
+                        Clipboard.SetText($"Iniciar sesión como: \n\tUSUARIO: {tbNomUsuario.Text}\n\t CONTRASEÑA: {tempPassword}");
+                        System.Threading.Thread.Sleep(1000);
+                        llenaUsuariosPermisos();
+                        cleanInputs();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Alta no exitosa");
+                    }
                 }
                 else
-                {
-                    MessageBox.Show("Alta no exitosa");
-                }
+                    MessageBox.Show("Correo Inválido");
             }
             else
             {
@@ -61,17 +84,84 @@ namespace EpicSolutions
 
         private void cleanInputs()
         {
-            tbCurp.Text = "";
             tbCorreo.Text = "";
-            tbPassword.Text = "";
+            tbNomUsuario.Text = "";
             tbTelefono.Text = "";
-            tbCurp.Text = "";
             tbUsuario.Text = "";
         }
 
         private void cbPermisos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void tbNomUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbUsuario_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = @"^[\p{L}\s]+$";
+
+            if (!Regex.IsMatch(e.Text, pattern))
+            {
+                e.Handled = true; 
+                MessageBox.Show("Only alphanumeric characters are allowed.");
+            }
+        }
+
+        private void tbTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+            string pattern = @"^\d{0,15}$";
+
+            if (!Regex.IsMatch(e.Text, pattern) || e.Text.Length > 15)
+            {
+                e.Handled = true; 
+                MessageBox.Show("Please enter a valid phone number (up to 15 digits).");
+            }
+
+        }
+
+        private void tbNomUsuario_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = @"^[A-Za-z0-9_]+$";
+
+
+            if (!Regex.IsMatch(e.Text, pattern))
+            {
+                e.Handled = true;
+                MessageBox.Show("Only alphanumeric characters are allowed.");
+            }
+        }
+
+        private void btRestablecer_Click(object sender, RoutedEventArgs e)
+        {
+            string tempPassword;
+            string query;
+
+            if (cbRestablecerBaja.SelectedValue != null)
+            {
+                tempPassword = random.Next(100000000, 1000000000).ToString();
+
+                query = $"UPDATE usuario set hashedPassword='{dbManager.HashPassword(tempPassword)}'," +
+                    $"tempPassword=1 WHERE nomUsuario='{cbRestablecerBaja.SelectedValue}'";
+                MessageBox.Show("Restablecimiento exitoso \nInformación ha sido copiada para que se propocione al usuario");
+                Clipboard.SetText($"Iniciar sesión como: \n\tUSUARIO: {cbRestablecerBaja.SelectedValue}\n\t CONTRASEÑA: {tempPassword}");
+
+                dbManager.makeQuery(query, true);
+            }
+            
+        }
+
+        private void btBaja_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbRestablecerBaja.SelectedValue != null)
+            {
+                dbManager.makeQuery($"DELETE FROM usuario where nomUsuario='{cbRestablecerBaja.SelectedValue}'");
+                MessageBox.Show($"Baja de {cbRestablecerBaja.SelectedValue} exitosa");
+            }
         }
     }
 }

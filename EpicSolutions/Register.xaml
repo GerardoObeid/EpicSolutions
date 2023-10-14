@@ -25,26 +25,34 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="tbRegister" Content="REGISTER" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="36" Height="70"/>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="188,277,0,0" VerticalAlignment="Top"/>
-        <Label Content="Correo" HorizontalAlignment="Left" Margin="188,327,0,0" VerticalAlignment="Top"/>
-        <Label Content="Usuario" HorizontalAlignment="Left" Margin="188,232,0,0" VerticalAlignment="Top"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="186,408,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbCorreo" HorizontalAlignment="Left" Margin="270,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22"/>
-        <TextBox x:Name="tbUsuario" HorizontalAlignment="Left" Margin="270,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22"/>
-        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="270,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22"/>
+        <Label x:Name="tbManager" Content="MANAGER" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="36" Height="70"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="156,281,0,0" VerticalAlignment="Top"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Margin="159,328,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="156,232,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbCorreo" HorizontalAlignment="Left" Margin="282,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22"/>
+        <TextBox x:Name="tbUsuario" HorizontalAlignment="Left" Margin="282,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22" PreviewTextInput="tbUsuario_PreviewTextInput"/>
+        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="282,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22" PreviewTextInput="tbTelefono_PreviewTextInput"/>
         <Button x:Name="tbRegistrar" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="441,453,0,0" VerticalAlignment="Top" Height="44" Width="102" Background="#FF38E218" Click="tbRegistrar_Click" RenderTransformOrigin="0.545,-0.208"/>
-        <Rectangle HorizontalAlignment="Left" Height="428" Margin="750,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
+        <Rectangle HorizontalAlignment="Left" Height="206" Margin="750,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#FFE9F068" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
         <Label Content="Registro de Usuarios" HorizontalAlignment="Left" Margin="274,156,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
-        <Label Content="Manejo de Permisos" HorizontalAlignment="Left" Margin="878,171,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
-        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Margin="268,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22"/>
-        <Label Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,227,0,0" VerticalAlignment="Top"/>
-        <Label Content="Curp" HorizontalAlignment="Left" Margin="186,372,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbCurp" HorizontalAlignment="Left" Margin="268,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22"/>
-        <ComboBox x:Name="cbPermisos" HorizontalAlignment="Left" Margin="841,260,0,0" VerticalAlignment="Top" Width="162" SelectionChanged="cbPermisos_SelectionChanged"/>
+        <Label Content="Manejo de Permisos" HorizontalAlignment="Left" Margin="878,147,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
+        <Label Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,185,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre de Usuario" HorizontalAlignment="Left" Margin="154,370,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbNomUsuario" HorizontalAlignment="Left" Margin="280,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22" TextChanged="tbNomUsuario_TextChanged" PreviewTextInput="tbNomUsuario_PreviewTextInput"/>
+        <ComboBox x:Name="cbPermisos" HorizontalAlignment="Left" Margin="841,220,0,0" VerticalAlignment="Top" Width="162" SelectionChanged="cbPermisos_SelectionChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="206" Margin="750,356,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FFE9F068" Opacity="0.5"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,406,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbRestablecerBaja" HorizontalAlignment="Left" Margin="841,442,0,0" VerticalAlignment="Top" Width="162" SelectionChanged="cbPermisos_SelectionChanged"/>
+        <Label Content="Restablecer Contraseña y Bajas" HorizontalAlignment="Left" Margin="832,358,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
+        <Button x:Name="btBaja" Content="Baja" HorizontalAlignment="Left" Margin="1002,506,0,0" VerticalAlignment="Top" Height="36" Width="83" Background="#FFF40B0B" Click="btBaja_Click"/>
+        <Button x:Name="btRestablecer" Content="Restablecer" HorizontalAlignment="Left" Margin="1094,506,0,0" VerticalAlignment="Top" Height="36" Width="83" Background="#FFDD872F" Click="btRestablecer_Click"/>
     </Grid>
 </Window>

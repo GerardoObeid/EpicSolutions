@@ -62,7 +62,7 @@ CREATE TABLE producto (
 
 -- Creación de la tabla usuario
 CREATE TABLE usuario (
-    idUsuario INT PRIMARY KEY,
+    nomUsuario VARCHAR(55) PRIMARY KEY,
     idCentro INT,
     nombre VARCHAR(255),
     telefono VARCHAR(15),
@@ -74,9 +74,10 @@ CREATE TABLE usuario (
 -- Creación de la tabla permiso
 CREATE TABLE permiso (
     idPermiso INT PRIMARY KEY,
-    idUsuario INT,
-    FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario)
+    nomUsuario VARCHAR(55),
+    FOREIGN KEY (nomUsuario) REFERENCES usuario(nomUsuario)
 );
+
 
 -- Creación de la tabla proveedor
 CREATE TABLE proveedor (

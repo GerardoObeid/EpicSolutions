@@ -20,11 +20,15 @@ namespace EpicSolutions
     public partial class mainPage : Window
     {
         dbFunctions dbManager;
+        string user;
         public mainPage(string user, dbFunctions dbManager)
         {
+            this.dbManager = dbManager;
+            this.user = user;
+
             InitializeComponent();
             lbUserLoggedIn.Content = $"Bienvenido: {user}";
-            this.dbManager = dbManager;
+            
         }
 
         private void btSeguimiento_Click(object sender, RoutedEventArgs e)
@@ -41,7 +45,7 @@ namespace EpicSolutions
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            Register reg = new Register(dbManager);
+            Register reg = new Register(user, dbManager);
             reg.Show();
         }
 
