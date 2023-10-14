@@ -36,15 +36,22 @@ namespace EpicSolutions
 
         private void tbRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            if (tbCurp.Text != ""  && tbCorreo.Text != "" && tbUsuario.Text != "" && tbTelefono.Text != "" && tbPassword.Text != "")
+            Random random = new Random();
+            string tempPassword;
+            int NUM_CENTRO = 10072004;
+
+            if (tbNomUsuario.Text != ""  && tbCorreo.Text != "" && tbUsuario.Text != "" && tbTelefono.Text != "")
             {
-                if (dbManager.makeQuery($"insert into usuario (idUsuario, idCentro, nombre, telefono, correo, hashedPassword, temp_password) values" +
-                    $"({Int32.Parse(tbCurp.Text)}, 10072004, '{tbUsuario.Text}'," +
-                    $"'{tbTelefono.Text}', '{tbCorreo.Text}',{tbPassword.Text}, 1)", true) != null)
+                tempPassword = random.Next(100000000, 1000000000).ToString();
+                string query = $"INSERT INTO usuario (nomUsuario, idCentro, nombre, telefono, correo, hashedPassword, tempPassword) VALUES" +
+                        $"('{tbNomUsuario.Text}', {NUM_CENTRO} , '{tbUsuario.Text}'," +
+                        $"'{tbTelefono.Text}', '{tbCorreo.Text}', '{dbManager.HashPassword(tempPassword)}', 1)";
+
+                if (dbManager.makeQuery(query, true) != null)
                 {
                     MessageBox.Show("Alta exitosa \nInformación ha sido copiada para que se propocione al usuario");
+                    Clipboard.SetText($"Iniciar sesión como: \n\tUSUARIO: {tbNomUsuario.Text}\n\t CONTRASEÑA: {tempPassword}");
                     System.Threading.Thread.Sleep(1000);
-                    Clipboard.SetText($"Manda las siguientes credenciales usuario: \n\tUSUARIO: {tbCorreo.Text}\n\t CONTRASEÑA: {tbPassword.Text}");
                     cleanInputs();
                     
                 }
@@ -61,15 +68,18 @@ namespace EpicSolutions
 
         private void cleanInputs()
         {
-            tbCurp.Text = "";
             tbCorreo.Text = "";
-            tbPassword.Text = "";
+            tbNomUsuario.Text = "";
             tbTelefono.Text = "";
-            tbCurp.Text = "";
             tbUsuario.Text = "";
         }
 
         private void cbPermisos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void tbNomUsuario_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

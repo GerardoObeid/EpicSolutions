@@ -72,7 +72,7 @@ namespace EpicSolutions
                 }
                 catch (Exception ex)
                 {
-                    
+                    return null;
                 }
 
                 resultList.Add(resultDictionary);
@@ -103,7 +103,7 @@ namespace EpicSolutions
         public int handleLogin(String user, String pwd)
         {
             int ans = 0;
-            string query = $"SELECT hashedPassword from usuario where correo='{user}'";
+            string query = $"SELECT hashedPassword from usuario where nomUsuario='{user}'";
             List<Dictionary<string, string>> queryResult;
 
 

@@ -57,16 +57,43 @@ namespace EpicSolutions
             }
             else
             {
-                mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
-                mp.Show();
-                this.Hide();
+                int res = Int32.Parse(dataBaseManager.makeQuery($"SELECT tempPassword FROM usuario WHERE nomUsuario='{tbUsuario.Text}'")[0]["tempPassword"]);
+                if (res == 0)
+                {
+                    mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
+                    mp.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor actualice su contraseña antes de iniciar sesión");
+                    btLogin.Visibility = Visibility.Collapsed;
+                    btActualizar.Visibility = Visibility.Visible;
+
+                    tbpassword.Password = tbpasswordText.Text;
+                    tbpasswordText.Visibility = Visibility.Collapsed;
+                    tbpassword.Visibility = Visibility.Visible;
+                }
+               
             }
 
+        }
+        private void btActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            string query = $"UPDATE usuario set hashedPassword='{dataBaseManager.HashPassword(tbpassword.Password)}'," +
+                $"tempPassword={0}";
+            dataBaseManager.makeQuery(query, true);
+
+            mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
+            mp.Show();
+            this.Hide();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        
     }
 }
