@@ -49,7 +49,7 @@ namespace EpicSolutions
             }
             else if(login == 3)
             {
-                MessageBox.Show("EL ususario ingresado no existe");
+                MessageBox.Show("EL usuario ingresado no existe");
             }
             else if (login == 2)
             {
@@ -70,6 +70,7 @@ namespace EpicSolutions
                     btLogin.Visibility = Visibility.Collapsed;
                     btActualizar.Visibility = Visibility.Visible;
 
+                    tbpasswordText.Text = "";
                     tbpassword.Password = tbpasswordText.Text;
                     tbpasswordText.Visibility = Visibility.Collapsed;
                     tbpassword.Visibility = Visibility.Visible;
@@ -81,7 +82,7 @@ namespace EpicSolutions
         private void btActualizar_Click(object sender, RoutedEventArgs e)
         {
             string query = $"UPDATE usuario set hashedPassword='{dataBaseManager.HashPassword(tbpassword.Password)}'," +
-                $"tempPassword={0}";
+                $"tempPassword=0 WHERE nomUsuario='{tbUsuario.Text}'";
             dataBaseManager.makeQuery(query, true);
 
             mainPage mp = new mainPage(tbUsuario.Text, dataBaseManager);
