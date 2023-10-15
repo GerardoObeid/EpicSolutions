@@ -25,14 +25,19 @@ namespace EpicSolutions
         Random random = new Random();
         string user;
         List<Dictionary<string, string>> res;
+        CheckBox[] permisos;
+        List <int> permisosSel;
         public Register(string user, dbFunctions dbManager)
         {
             this.dbManager = dbManager;
             this.user = user;
 
             InitializeComponent();
+            permisos = new CheckBox[] { chbBaja, chbPermisos, chbRestablecer };
+
             llenaUsuariosPermisos();
-            
+            stPermisos.Visibility = Visibility.Collapsed;
+
         }
         public void llenaUsuariosPermisos()
         {
@@ -90,11 +95,7 @@ namespace EpicSolutions
             tbUsuario.Text = "";
         }
 
-        private void cbPermisos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+       
         private void tbNomUsuario_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -162,6 +163,46 @@ namespace EpicSolutions
                 dbManager.makeQuery($"DELETE FROM usuario where nomUsuario='{cbRestablecerBaja.SelectedValue}'");
                 MessageBox.Show($"Baja de {cbRestablecerBaja.SelectedValue} exitosa");
             }
+        }
+        private void fetchPermissions()
+        {
+            stPermisos.Visibility = Visibility.Visible;
+            res = dbManager.makeQuery($"select idPermiso from permiso where nomUsuario='{cbPermisos.SelectedValue}'");
+            permisosSel = new List<int>();
+
+            foreach (CheckBox chb in permisos)
+            {
+                chb.IsChecked = false;
+            }
+            foreach (var item in res)
+            {
+                permisos[Int16.Parse(item["idPermiso"])].IsChecked = true;
+                permisosSel.Add(Convert.ToInt32(item["idPermiso"]));
+            }
+
+        }
+        private void cbPermisos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            fetchPermissions();
+        }
+
+        private void btPermisos_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < permisos.Length; i++)
+            {
+
+                if (permisos[i].IsChecked == true && !permisosSel.Contains(i))
+                {
+                    dbManager.makeQuery($"INSERT INTO permiso(idPermiso, nomUsuario) VALUES({ i}, '{cbPermisos.SelectedValue}')", true);
+                }
+                if (permisos[i].IsChecked == false && permisosSel.Contains(i))
+                {
+                    dbManager.makeQuery($"DELETE FROM permiso WHERE idPermiso={i.ToString()} AND nomUsuario='{cbPermisos.SelectedValue}'", true);
+                }
+                
+            }
+            cbPermisos.SelectedIndex = -1;
+            stPermisos.Visibility = Visibility.Collapsed;
         }
     }
 }
