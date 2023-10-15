@@ -62,7 +62,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="btSolicitudes" Content="Solicitudes" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="204" Margin="730,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btSolicitudes_Click">
+        <Button x:Name="btSolicitudes" Content="Requests" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="204" Margin="730,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btSolicitudes_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF40E686" Offset="0.143"/>
@@ -70,7 +70,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btPedidos" Content="Pedidos Activos" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="207" Margin="520,2,0,0" Click="btRegistrar_Copy_Click" FontSize="24" FontFamily="Garamond" FontWeight="Bold">
+        <Button x:Name="btPedidos" Content="Active Orders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="207" Margin="520,2,0,0" Click="btRegistrar_Copy_Click" FontSize="24" FontFamily="Garamond" FontWeight="Bold">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF40E686" Offset="0.143"/>
@@ -78,7 +78,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btSeguimiento" Content="Seguimiento" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="207" Margin="310,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btSeguimiento_Click">
+        <Button x:Name="btSeguimiento" Content="Follow Up" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="207" Margin="310,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btSeguimiento_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF40E686" Offset="0.143"/>
@@ -86,7 +86,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btRegistrar" Content="Crear Usuarios" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="205" Margin="102,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btRegistrar_Click">
+        <Button x:Name="btRegistrar" Content="User Managment" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="205" Margin="102,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btRegistrar_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF40E686" Offset="0.143"/>
@@ -101,7 +101,7 @@
                 <ImageBrush ImageSource="/mp.jpeg" Stretch="UniformToFill" Opacity="0.2"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="btProveedores" Content="Proveedores" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="203" Margin="937,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btProveedores_Click">
+        <Button x:Name="btProveedores" Content="Suppliers" HorizontalAlignment="Left" VerticalAlignment="Top" Height="73" Width="203" Margin="937,2,0,0" FontSize="24" FontFamily="Garamond" FontWeight="Bold" Click="btProveedores_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF40E686" Offset="0.143"/>

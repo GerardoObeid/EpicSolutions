@@ -60,4 +60,6 @@ select * from cliente;
 select * from bien b full join producto p on b.clave=p.clave full join servicio s on s.clave=b.clave;
 use db_servicio
 select * from usuario
-select * from usuario;
+
+select * from permiso;
+INSERT INTO permiso (idPermiso, nomUsuario) VALUES (0, 'maferram')
