@@ -37,12 +37,6 @@ namespace EpicSolutions
             fp.Show();  
         }
 
-        private void btSolicitudes_Click(object sender, RoutedEventArgs e)
-        {
-            Pending pd = new Pending(); 
-            pd.Show();
-        }
-
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
             Register reg = new Register(user, dbManager);
