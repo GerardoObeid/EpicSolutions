@@ -46,20 +46,11 @@ INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area)
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (160, 16, 'Decoración Globos','5554344342', 'Álvaro Obregón Decoraciones con Globos #22', 'decoración');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (170, 17, 'Música en Vivo','5554344342', 'Coyoacan Escenario Musical #29', 'música');
 
-
--- Inserciones en la tabla "bien"
--- Inserta 60 bienes
+use db_servicio
 INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor) VALUES (1, 'Tamal Verde', 5.99, 1, 10);
 INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor) VALUES (2, 'Catering', 5.99, 1, 10);
 
 INSERT INTO producto (clave, descripcion, capacidadProductiva) VALUES (1, 'Café Americano de Café Aromático', 50);
 INSERT INTO servicio (clave,  giro, disponibilidad, descripcion) VALUES (2, 'Comida', 5,'Servicio de catering para cualquier tipo de evento');
 
-select * from proveedor p right join cliente c  on c.idCliente=p.idCliente;
-select * from cliente;
-select * from bien b full join producto p on b.clave=p.clave full join servicio s on s.clave=b.clave;
-use db_servicio
-select * from usuario
-
-select * from permiso;
-INSERT INTO permiso (idPermiso, nomUsuario) VALUES (0, 'maferram')
+select * from proveedor p inner join bien c on p.idProveedor=c.idProveedor inner join producto prod on prod.clave=c.clave where(concat(select id from cliente where nombre='Lupita Gutierrez', 0));

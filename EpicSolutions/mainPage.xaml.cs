@@ -33,7 +33,7 @@ namespace EpicSolutions
 
         private void btSeguimiento_Click(object sender, RoutedEventArgs e)
         {
-            FollowUp fp = new FollowUp();
+            FollowUp fp = new FollowUp(dbManager);
             fp.Show();  
         }
 

@@ -42,6 +42,7 @@ namespace EpicSolutions
 
         private void btLogin_Click(object sender, RoutedEventArgs e)
         {
+            tbpasswordText.Text = tbpassword.Password;
             int login = dataBaseManager.handleLogin(tbUsuario.Text, tbpassword.Password);
             if (login == 0)
             {
