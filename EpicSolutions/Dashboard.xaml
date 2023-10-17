@@ -23,15 +23,17 @@
             </Rectangle.Fill>
         </Rectangle>
         <Label x:Name="lbDashboards" Content="DASHBOARD" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
-        <syncfusion:SfChart x:Name="chart" HorizontalAlignment="Left" Margin="27,99,0,0" VerticalAlignment="Top" Height="483" Width="703">
-            <syncfusion:BarSeries ItemsSource="{Binding YourDataCollection}" XBindingPath="ProviderName" YBindingPath="Count">
+        <syncfusion:SfChart x:Name="chart" HorizontalAlignment="Left" Margin="27,82,0,0" VerticalAlignment="Top" Height="500" Width="544">
+            <syncfusion:BarSeries  XBindingPath="ProviderName" YBindingPath="Count">
                 <syncfusion:BarSeries.XAxis>
                     <syncfusion:CategoryAxis/>
                 </syncfusion:BarSeries.XAxis>
             </syncfusion:BarSeries>
         </syncfusion:SfChart>
 
-
+        <syncfusion:SfChart x:Name="pieChart" HorizontalAlignment="Right" Margin="0,82,0,0" VerticalAlignment="Top" Height="500" Width="619"/>
+        <Label Content="Top 8 áreas con más pedidos" HorizontalAlignment="Left" Margin="857,82,0,0" VerticalAlignment="Top" Height="53" Width="288" FontFamily="Arial Rounded MT Bold" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Top 10 proveedores con más pedidos" HorizontalAlignment="Left" Margin="130,88,0,0" VerticalAlignment="Top" Height="53" Width="338" FontFamily="Arial Rounded MT Bold" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>
