@@ -62,5 +62,11 @@ namespace EpicSolutions
             Proveedores p = new Proveedores(dbManager);
             p.Show  ();
         }
+
+        private void btDasboard_Click(object sender, RoutedEventArgs e)
+        {
+            Dashboard db = new Dashboard(dbManager);
+            db.Show();
+        }
     }
 }
