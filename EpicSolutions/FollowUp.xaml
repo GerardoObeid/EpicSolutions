@@ -35,7 +35,7 @@
         <Label x:Name="lbAreas" Content="Seleccione un área:" HorizontalAlignment="Left" Margin="56,149,0,0" VerticalAlignment="Top" FontSize="20" Width="207"/>
         <Label x:Name="lbAreas_Copy" Content="Seleccione un proveedor:" HorizontalAlignment="Left" Margin="83,280,0,0" VerticalAlignment="Top" FontSize="20" Width="277"/>
         <Button x:Name="btSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="721,488,0,0" VerticalAlignment="Top" Height="44" Width="82" Background="#FF228BE8" Click="btSeleccionar_Click" RenderTransformOrigin="2.334,0.835"/>
-        <Label Content="Seleccione la operación:" HorizontalAlignment="Left" Height="65" Margin="411,146,0,0" VerticalAlignment="Top" Width="405" FontWeight="Normal" FontFamily="Segoe UI" FontSize="20"/>
+        <Label Content="Seleccione la operación:" HorizontalAlignment="Left" Height="65" Margin="411,140,0,0" VerticalAlignment="Top" Width="405" FontWeight="Normal" FontFamily="Segoe UI" FontSize="20"/>
         <StackPanel/>
         <StackPanel HorizontalAlignment="Left" Height="142" Margin="471,233,0,0" VerticalAlignment="Top" Width="290">
             <RadioButton x:Name="rbProductos" Content="Ver productos" FontSize="18"/>
@@ -51,10 +51,13 @@
                 <SolidColorBrush Color="#FFD4BFBF" Opacity="0.4"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button x:Name="btNuevaOperacion" Content="Reset" HorizontalAlignment="Left" Margin="1091,488,0,0" VerticalAlignment="Top" Background="#FFD21818" Height="42" Width="87" Click="btNuevaOperacion_Click"/>
+        <Button x:Name="btNuevaOperacion" Content="Reset" HorizontalAlignment="Left" Margin="1107,584,0,0" VerticalAlignment="Top" Background="#FF43D218" Height="42" Width="87" Click="btNuevaOperacion_Click"/>
         <ScrollViewer x:Name="scroll" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="860,166,0,0" Width="334" Height="317">
             <TextBlock x:Name="tbVisualizacion" TextWrapping="Wrap">
             </TextBlock>
         </ScrollViewer>
+        <ComboBox x:Name="cbBajas" HorizontalAlignment="Left" Height="30" Margin="872,203,0,0" VerticalAlignment="Top" Width="274" Visibility="Collapsed"/>
+        <Label x:Name="lbBajas" Content="Seleccione el bien:" HorizontalAlignment="Left" Margin="874,150,0,0" VerticalAlignment="Top" FontSize="20" Width="195" Visibility="Collapsed"/>
+        <Button x:Name="btBajas" Content="Eliminar" HorizontalAlignment="Left" Margin="1107,488,0,0" VerticalAlignment="Top" Height="46" Width="80" Background="#FFED3434" Visibility="Collapsed"/>
     </Grid>
 </Window>

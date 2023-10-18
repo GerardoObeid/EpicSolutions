@@ -109,6 +109,11 @@ namespace EpicSolutions
                         break;
                     case 3:
                         tbVisualizacion.Visibility = Visibility.Collapsed;
+                        query = $"select b.* from proveedor p inner join " +
+                           $"bien b on p.idProveedor=b.idProveedor " +
+                           $"where b.tipo='servicio' and p.idCliente=(SELECT idCliente " +
+                           $"FROM cliente WHERE nombre ='{radioButtons[selProv].Content.ToString()}');";
+                        tbVisualizacion.Text = processRes(dbManager.makeQuery(query));
                         MessageBox.Show("Baja de productos de proveedor");
                     break;
                     case 4:

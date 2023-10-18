@@ -46,11 +46,130 @@ INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area)
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (160, 16, 'Decoración Globos','5554344342', 'Álvaro Obregón Decoraciones con Globos #22', 'decoración');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (170, 17, 'Música en Vivo','5554344342', 'Coyoacan Escenario Musical #29', 'música');
 
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo) VALUES (1, 'Tamal Verde', 20, 1, 10, 'producto');
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo) VALUES (2, 'Tamal Rojo', 20, 1, 10, 'producto');
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo) VALUES (3, 'Atole de Chocolate', 18, 1, 10, 'producto');
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo) VALUES (4, 'Tamales de Pollo', 15, 1, 10, 'producto');
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo) VALUES (5, 'Tamales de Cerdo', 15, 1, 10, 'producto');
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo) VALUES (6, 'Tamales Vegetarianos', 15, 1, 10, 'producto');
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo) VALUES (7, 'Tamales de Elote', 12, 1, 10, 'producto');
+-- Proveedor 20 - Globos Ruiseñor (Área: Fiestas)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (8, 'Globos de Colores', 5.99, 1, 20, 'producto'),
+       (9, 'Decoración de Globos', 12.99, 1, 20, 'servicio');
+
+-- Proveedor 40 - Dulces Sabrositos (Área: Dulces)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (10, 'Paletas de Caramelo', 0.99, 1, 40, 'producto'),
+       (11, 'Bolsas de Chocolates', 8.99, 1, 40, 'producto'),
+       (12, 'Distribución de Dulces', 25.99, 1, 40, 'servicio');
+
+-- Proveedor 50 - Decoraciones FiestaLoca (Área: Fiestas)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (13, 'Globos de Fiesta', 3.99, 1, 50, 'producto'),
+       (14, 'Decoración de Mesas', 15.99, 1, 50, 'servicio');
+
+-- Proveedor 60 - PizzaRica (Área: Fiestas)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (15, 'Pizza de Pepperoni', 10.99, 1, 60, 'producto'),
+       (16, 'Pizza de Vegetales', 11.99, 1, 60, 'producto');
+
+-- Proveedor 70 - Café Aromático (Área: Bebidas)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (17, 'Café Americano', 3.49, 1, 70, 'producto'),
+       (18, 'Café Espresso', 4.99, 1, 70, 'producto');
+
+-- Proveedor 80 - Dulcería Felicidad (Área: Dulces)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (19, 'Chocolates Variados', 2.99, 1, 80, 'producto'),
+       (20, 'Cajas de Bombones', 6.99, 1, 80, 'producto');
+
+-- Proveedor 90 - Fotografía Estudio Creativo (Área: Fotografía)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (21, 'Sesión de Retratos', 99.99, 1, 90, 'servicio'),
+       (22, 'Fotografía de Eventos', 199.99, 1, 90, 'servicio');
+
+-- Proveedor 100 - Tacos al Pastor (Área: Comida)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (23, 'Tacos al Pastor', 1.99, 1, 100, 'producto'),
+       (24, 'Salsas Variadas', 0.99, 1, 100, 'producto');
+
+-- Proveedor 110 - Diseño de Invitaciones (Área: Invitaciones)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (25, 'Invitaciones Personalizadas', 9.99, 1, 110, 'producto'),
+       (26, 'Diseño Gráfico', 49.99, 1, 110, 'servicio');
+
+-- Proveedor 120 - Repostería Delicias (Área: Repostería)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (27, 'Pasteles Decorativos', 29.99, 1, 120, 'producto'),
+       (28, 'Cupcakes Variados', 2.49, 1, 120, 'producto');
+
+-- Proveedor 130 - Flores Frescas (Área: Flores)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (29, 'Ramos de Flores', 19.99, 1, 130, 'producto'),
+       (30, 'Decoración Floral', 39.99, 1, 130, 'servicio');
+
+-- Proveedor 140 - Entretenimiento Magia (Área: Entretenimiento)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (31, 'Show de Magia en Vivo', 99.99, 1, 140, 'servicio');
+
+-- Proveedor 150 - Luces y Sonido Eventos (Área: Eventos)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (32, 'Equipo de Sonido', 49.99, 1, 150, 'servicio');
+
+-- Proveedor 160 - Decoración Globos (Área: Decoración)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (33, 'Decoraciones con Globos', 7.99, 1, 160, 'producto'),
+       (34, 'Globos Especiales', 2.99, 1, 160, 'producto');
+
+-- Proveedor 170 - Música en Vivo (Área: Música)
+INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor, tipo)
+VALUES (35, 'Grupo Musical en Vivo', 199.99, 1, 170, 'servicio');
+-----------------------------------------------------------------------------------------------------------
+-- Pedidos para Cliente 18
+INSERT INTO pedido (idPedido, fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente)
+VALUES (1, '2023-10-16', '2023-10-20', 8, 20, 18),
+       (2, '2023-10-16', '2023-10-19', 9, 20, 18),
+       (3, '2023-10-16', '2023-10-18', 15, 60, 18);
+
+-- Pedidos para Cliente 19
+INSERT INTO pedido (idPedido, fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente)
+VALUES (4, '2023-10-16', '2023-10-20', 11, 40, 19),
+       (5, '2023-10-16', '2023-10-19', 13, 50, 19),
+       (6, '2023-10-16', '2023-10-18', 21, 90, 19);
+
+-- Pedidos para Cliente 20
+INSERT INTO pedido (idPedido, fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente)
+VALUES (7, '2023-10-16', '2023-10-20', 23, 100, 20),
+       (8, '2023-10-16', '2023-10-19', 25, 110, 20),
+       (9, '2023-10-16', '2023-10-18', 31, 140, 20);
+
+-- Pedidos para Cliente 21
+INSERT INTO pedido (idPedido, fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente)
+VALUES (10, '2023-10-16', '2023-10-20', 10, 40, 21),
+       (11, '2023-10-16', '2023-10-19', 12, 40, 21),
+       (12, '2023-10-16', '2023-10-18', 32, 150, 21);
+
+-- Pedidos para Cliente 22
+INSERT INTO pedido (idPedido, fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente)
+VALUES (13, '2023-10-16', '2023-10-20', 17, 70, 22),
+       (14, '2023-10-16', '2023-10-19', 19, 80, 22),
+       (15, '2023-10-16', '2023-10-18', 33, 160, 22);
+
+-- Pedidos para Cliente 23
+INSERT INTO pedido (idPedido, fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente)
+VALUES (16, '2023-10-16', '2023-10-20', 8, 20, 23),
+       (17, '2023-10-16', '2023-10-19', 9, 20, 23),
+       (18, '2023-10-16', '2023-10-18', 15, 60, 23);
+
+-- Pedidos para Cliente 24
+INSERT INTO pedido (idPedido, fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente)
+VALUES (19, '2023-10-16', '2023-10-20', 11, 40, 24),
+       (20, '2023-10-16', '2023-10-19', 13, 50, 24),
+       (21, '2023-10-16', '2023-10-18', 21, 90, 24);
+
+
+select * from pedido
 use db_servicio
-INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor) VALUES (1, 'Tamal Verde', 5.99, 1, 10);
-INSERT INTO bien (clave, nombre, precio, aprobado, idProveedor) VALUES (2, 'Catering', 5.99, 1, 10);
-
-INSERT INTO producto (clave, descripcion, capacidadProductiva) VALUES (1, 'Café Americano de Café Aromático', 50);
-INSERT INTO servicio (clave,  giro, disponibilidad, descripcion) VALUES (2, 'Comida', 5,'Servicio de catering para cualquier tipo de evento');
-
-select * from proveedor p inner join bien c on p.idProveedor=c.idProveedor inner join producto prod on prod.clave=c.clave where(concat(select id from cliente where nombre='Lupita Gutierrez', 0));
+SELECT TOP 8 area AS XProperty, COUNT(*) AS YProperty FROM pedido ped INNER JOIN proveedor p ON p.idProveedor = ped.idProveedor GROUP BY area ORDER BY YProperty desc
+select * from proveedor p inner join bien c on p.idProveedor=c.idProveedor inner join producto prod on prod.clave=c.clave where p.idCliente=(SELECT idCliente FROM cliente WHERE nombre = 'Lupita Gutierrez');
