@@ -21,13 +21,13 @@
             </Rectangle.Fill>
         </Rectangle>
         <Label x:Name="lbActiveOrders" Content="ACTIVE ORDERS" HorizontalAlignment="Center" Margin="0,13,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="36" Height="70"/>
-        <ListBox HorizontalAlignment="Center" Height="468" VerticalAlignment="Top" Width="1106" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,99,0,0">
-            <ListBox.Background>
-                <SolidColorBrush Color="White" Opacity="0.4"/>
-            </ListBox.Background>
-        </ListBox>
         <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click"/>
         <Image HorizontalAlignment="Left" Height="80" Margin="49,-3,0,0" VerticalAlignment="Top" Width="90" Source="/logo.png"/>
+        <DataGrid x:Name="gridActiveOrders" HorizontalAlignment="Left" Height="468" Margin="49,131,0,0" VerticalAlignment="Top" Width="1164" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="gridActiveOrders_SelectionChanged" IsReadOnly="True">
+            <DataGrid.Background>
+                <SolidColorBrush Color="#FFF0F0F0" Opacity="0.5"/>
+            </DataGrid.Background>
+        </DataGrid>
 
     </Grid>
 </Window>

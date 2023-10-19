@@ -169,7 +169,13 @@ VALUES (19, '2023-10-16', '2023-10-20', 11, 40, 24),
        (21, '2023-10-16', '2023-10-18', 21, 90, 24);
 
 
-select * from pedido
-use db_servicio
+SELECT * FROM pedido WHERE fecha_entrega >= GETDATE()
 SELECT TOP 8 area AS XProperty, COUNT(*) AS YProperty FROM pedido ped INNER JOIN proveedor p ON p.idProveedor = ped.idProveedor GROUP BY area ORDER BY YProperty desc
 select * from proveedor p inner join bien c on p.idProveedor=c.idProveedor inner join producto prod on prod.clave=c.clave where p.idCliente=(SELECT idCliente FROM cliente WHERE nombre = 'Lupita Gutierrez');
+
+SELECT ped.idPedido as ID Pedido,ped.fecha_creacion as Fecha Creacion,
+                ped.fecha_entrega as Fecha Entrega, ped.monto as Monto, ped.cantidad as Cantidad, ped.comentarios as Comentarios,
+                 c.nombre as Nombre Cliente, b.nombre as Nombre Bien
+                FROM pedido ped INNER JOIN bien b ON b.clave=ped.claveBien 
+                INNER JOIN cliente c on c.idCliente=ped.idCliente
+                WHERE fecha_entrega >= GETDATE()

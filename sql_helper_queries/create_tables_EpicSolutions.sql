@@ -31,7 +31,8 @@ CREATE TABLE bien (
     clave INT PRIMARY KEY,
     nombre VARCHAR(255),
     precio DECIMAL(10, 2),
-    aprobado SMALLINT
+	idProveedor int,
+	 FOREIGN KEY (idproveedor) REFERENCES proveedor(idProveedor)
 );
 
 -- Creación de la tabla fotos
@@ -41,24 +42,7 @@ CREATE TABLE fotos (
     FOREIGN KEY (clave) REFERENCES bien(clave)
 );
 
--- Creación de la tabla servicio
-CREATE TABLE servicio (
-    clave INT,
-    idServicio INT PRIMARY KEY,
-    giro VARCHAR(255),
-    disponibilidad smallint,
-    descripcion TEXT,
-    FOREIGN KEY (clave) REFERENCES bien(clave)
-);
 
--- Creación de la tabla producto
-CREATE TABLE producto (
-    clave INT,
-    idProducto INT PRIMARY KEY,
-    descripcion TEXT,
-    capacidadProductiva INT,
-    FOREIGN KEY (clave) REFERENCES bien(clave)
-);
 
 -- Creación de la tabla usuario
 CREATE TABLE usuario (
@@ -96,6 +80,9 @@ CREATE TABLE pedido (
     claveBien INT,
     idProveedor INT,
     idCliente INT,
+	monto INT,
+	cantidad INT,
+	comentarios varchar(100),
     FOREIGN KEY (claveBien) REFERENCES bien(clave),
     FOREIGN KEY (idProveedor) REFERENCES proveedor(idProveedor),
     FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)
