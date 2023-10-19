@@ -28,10 +28,7 @@ namespace EpicSolutions
             InitializeComponent();
         }
 
-        private void btRegistrar_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void btHome_Click(object sender, RoutedEventArgs e)
         {

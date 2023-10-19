@@ -38,6 +38,38 @@ namespace EpicSolutions
             llenaUsuariosPermisos();
             stPermisos.Visibility = Visibility.Collapsed;
 
+            List <string> currentPermisions = getCurrentUserPermissions();
+            if (!currentPermisions.Contains("0") && !currentPermisions.Contains("2"))
+            {
+                btRestablecer.Visibility = Visibility.Collapsed;
+                lbBajasRest.Visibility = Visibility.Collapsed;
+                lbBajasRest2.Visibility = Visibility.Collapsed;
+                btLimpiarBajas.Visibility = Visibility.Collapsed;
+                recBajasRest.Visibility = Visibility.Collapsed;
+                btBaja.Visibility = Visibility.Collapsed;
+                cbRestablecerBaja.Visibility = Visibility.Collapsed;
+            }
+            if (!currentPermisions.Contains("0"))
+            {
+                btBaja.Visibility = Visibility.Collapsed;
+            }
+            if (!currentPermisions.Contains("1"))
+            {
+                cbPermisos.Visibility = Visibility.Collapsed;
+                lbPermisos.Visibility = Visibility.Collapsed;
+                recPermisos.Visibility = Visibility.Collapsed;
+                stPermisos.Visibility = Visibility.Collapsed;
+                btPermisos.Visibility = Visibility.Collapsed;
+                lbSeleccPermisos.Visibility = Visibility.Collapsed;
+                btLimpiarPermisos.Visibility = Visibility.Collapsed;
+            }
+            if (!currentPermisions.Contains("2"))
+            {
+                btRestablecer.Visibility = Visibility.Collapsed;
+              
+            }
+
+
         }
         public void llenaUsuariosPermisos()
         {
@@ -167,7 +199,7 @@ namespace EpicSolutions
         private void fetchPermissions()
         {
             stPermisos.Visibility = Visibility.Visible;
-            res = dbManager.makeQuery($"select idPermiso from permiso where nomUsuario='{cbPermisos.SelectedValue}'");
+            res = dbManager.makeQuery($"SELECT idPermiso FROM permiso WHERE nomUsuario='{cbPermisos.SelectedValue}'");
             permisosSel = new List<int>();
 
             foreach (CheckBox chb in permisos)
@@ -181,8 +213,21 @@ namespace EpicSolutions
             }
 
         }
+        private List <string> getCurrentUserPermissions()
+        {
+            res = dbManager.makeQuery($"SELECT idPermiso FROM permiso WHERE nomUsuario='{user}'");
+            List <string> permisosCurrentUser = new List<string>();
+
+            foreach (var item in res)
+            {
+                permisosCurrentUser.Add(item["idPermiso"]);
+            }
+
+            return permisosCurrentUser;
+        }
         private void cbPermisos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            stPermisos.Visibility=Visibility.Visible;
             fetchPermissions();
         }
 
@@ -207,7 +252,8 @@ namespace EpicSolutions
 
         private void btLimpiarPermisos_Click(object sender, RoutedEventArgs e)
         {
-            cbPermisos.SelectedIndex -= 1;
+            cbPermisos.SelectedIndex = -1;
+            stPermisos.Visibility=Visibility.Collapsed;
         }
 
         private void btLimpiarBajas_Click(object sender, RoutedEventArgs e)

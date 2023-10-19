@@ -33,24 +33,24 @@
         <TextBox x:Name="tbUsuario" HorizontalAlignment="Left" Margin="282,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22" PreviewTextInput="tbUsuario_PreviewTextInput"/>
         <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="282,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22" PreviewTextInput="tbTelefono_PreviewTextInput"/>
         <Button x:Name="tbRegistrar" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="441,453,0,0" VerticalAlignment="Top" Height="44" Width="102" Background="#FF38E218" Click="tbRegistrar_Click" RenderTransformOrigin="0.545,-0.208"/>
-        <Rectangle HorizontalAlignment="Left" Height="206" Margin="750,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
+        <Rectangle x:Name="recPermisos" HorizontalAlignment="Left" Height="206" Margin="750,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#FFE9F068" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
         <Label Content="Registro de Usuarios" HorizontalAlignment="Left" Margin="274,156,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
-        <Label Content="Manejo de Permisos" HorizontalAlignment="Left" Margin="878,147,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
-        <Label Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,185,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbPermisos" Content="Manejo de Permisos" HorizontalAlignment="Left" Margin="878,147,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
+        <Label x:Name="lbSeleccPermisos" Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,185,0,0" VerticalAlignment="Top"/>
         <Label Content="Nombre de Usuario" HorizontalAlignment="Left" Margin="154,370,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbNomUsuario" HorizontalAlignment="Left" Margin="280,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="22" TextChanged="tbNomUsuario_TextChanged" PreviewTextInput="tbNomUsuario_PreviewTextInput"/>
         <ComboBox x:Name="cbPermisos" HorizontalAlignment="Left" Margin="841,220,0,0" VerticalAlignment="Top" Width="162" SelectionChanged="cbPermisos_SelectionChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="206" Margin="750,356,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
+        <Rectangle x:Name="recBajasRest" HorizontalAlignment="Left" Height="206" Margin="750,356,0,0" Stroke="Black" VerticalAlignment="Top" Width="442" StrokeThickness="0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#FFE9F068" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,406,0,0" VerticalAlignment="Top"/>
-        <Label Content="Restablecer Contraseña y Bajas" HorizontalAlignment="Left" Margin="832,364,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
+        <Label x:Name="lbBajasRest2" Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,406,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbBajasRest" Content="Restablecer Contraseña y Bajas" HorizontalAlignment="Left" Margin="832,364,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
         <Button x:Name="btBaja" Content="Baja" HorizontalAlignment="Left" Margin="1002,512,0,0" VerticalAlignment="Top" Height="36" Width="83" Background="#FFF40B0B" Click="btBaja_Click"/>
         <Button x:Name="btRestablecer" Content="Restablecer" HorizontalAlignment="Left" Margin="1094,512,0,0" VerticalAlignment="Top" Height="36" Width="83" Background="#FFDD872F" Click="btRestablecer_Click"/>
         <StackPanel RenderTransformOrigin="0.727,0.479"/>
@@ -62,8 +62,8 @@
         </StackPanel>
         <Button x:Name="btPermisos" Content="Actualizar" HorizontalAlignment="Left" Margin="1116,296,0,0" VerticalAlignment="Top" Height="30" Width="60" RenderTransformOrigin="0.513,0.227" Background="#FF60DD42" Click="btPermisos_Click"/>
         <ComboBox x:Name="cbRestablecerBaja" HorizontalAlignment="Left" Height="22" Margin="841,453,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button x:Name="btLimpiarBajas" Content="Limpiar" HorizontalAlignment="Left" Height="22" Margin="978,471,0,0" VerticalAlignment="Top" Width="57" Background="{x:Null}" BorderBrush="{x:Null}" Click="btLimpiarBajas_Click"/>
-        <Button x:Name="btLimpiarPermisos" Content="Limpiar" HorizontalAlignment="Left" Height="22" Margin="978,240,0,0" VerticalAlignment="Top" Width="57" Background="{x:Null}" BorderBrush="{x:Null}" Click="btLimpiarPermisos_Click"/>
+        <Button x:Name="btLimpiarBajas" Content="Limpiar" HorizontalAlignment="Left" Height="22" Margin="978,474,0,0" VerticalAlignment="Top" Width="57" Background="{x:Null}" BorderBrush="{x:Null}" Click="btLimpiarBajas_Click"/>
+        <Button x:Name="btLimpiarPermisos" Content="Limpiar" HorizontalAlignment="Left" Height="22" Margin="978,244,0,0" VerticalAlignment="Top" Width="57" Background="{x:Null}" BorderBrush="{x:Null}" Click="btLimpiarPermisos_Click"/>
         <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click"/>
         <Image HorizontalAlignment="Left" Height="80" Margin="49,-3,0,0" VerticalAlignment="Top" Width="90" Source="/logo.png"/>
 
