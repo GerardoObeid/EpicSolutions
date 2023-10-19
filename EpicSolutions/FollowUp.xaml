@@ -43,7 +43,7 @@
             <RadioButton x:Name="rbBajaProd" Content="Baja Productos" FontSize="18"/>
             <RadioButton x:Name="rbBajaServicios" Content="Baja servicios" Height="26" FontSize="18"/>
         </StackPanel>
-        <Label x:Name="lbFollowUp" Content="Follow Up" HorizontalAlignment="Center" Margin="0,13,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="36" Height="70"/>
+        <Label x:Name="lbFollowUp" Content="FOLLOW UP" HorizontalAlignment="Center" Margin="0,13,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="36" Height="70"/>
         <Button x:Name="btBaja" Content="Baja" HorizontalAlignment="Left" Margin="1030,489,0,0" VerticalAlignment="Top" Height="40" Width="77" Background="#FFD93521" Visibility="Collapsed"/>
         <Button x:Name="btVer" Content="Ver" HorizontalAlignment="Left" Margin="1030,489,0,0" VerticalAlignment="Top" Height="40" Width="77" Background="#FF70E64C" Visibility="Collapsed"/>
         <Rectangle x:Name="recOperations" HorizontalAlignment="Left" Height="452" Margin="842,132,0,0" VerticalAlignment="Top" Width="374">

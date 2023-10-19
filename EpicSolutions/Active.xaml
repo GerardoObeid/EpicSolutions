@@ -20,5 +20,11 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <Label x:Name="lbActiveOrders" Content="ACTIVE ORDERS" HorizontalAlignment="Center" Margin="0,13,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="36" Height="70"/>
+        <ListBox HorizontalAlignment="Center" Height="468" VerticalAlignment="Top" Width="1106" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,99,0,0">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.4"/>
+            </ListBox.Background>
+        </ListBox>
     </Grid>
 </Window>

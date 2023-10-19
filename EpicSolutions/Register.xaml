@@ -50,7 +50,6 @@
             </Rectangle.Fill>
         </Rectangle>
         <Label Content="Seleccione un Usuario:" HorizontalAlignment="Left" Margin="776,406,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbRestablecerBaja" HorizontalAlignment="Left" Margin="841,442,0,0" VerticalAlignment="Top" Width="162" SelectionChanged="cbPermisos_SelectionChanged"/>
         <Label Content="Restablecer Contraseña y Bajas" HorizontalAlignment="Left" Margin="832,364,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="18"/>
         <Button x:Name="btBaja" Content="Baja" HorizontalAlignment="Left" Margin="1002,506,0,0" VerticalAlignment="Top" Height="36" Width="83" Background="#FFF40B0B" Click="btBaja_Click"/>
         <Button x:Name="btRestablecer" Content="Restablecer" HorizontalAlignment="Left" Margin="1094,506,0,0" VerticalAlignment="Top" Height="36" Width="83" Background="#FFDD872F" Click="btRestablecer_Click"/>
@@ -62,5 +61,7 @@
             <CheckBox x:Name="chbRestablecer" Content="Restablecer contraseñas"/>
         </StackPanel>
         <Button x:Name="btPermisos" Content="Actualizar" HorizontalAlignment="Left" Margin="1116,296,0,0" VerticalAlignment="Top" Height="30" Width="60" RenderTransformOrigin="0.513,0.227" Background="#FF60DD42" Click="btPermisos_Click"/>
+        <ComboBox Width="120"/>
+        <ComboBox x:Name="cbRestablecerBaja" HorizontalAlignment="Left" Height="22" Margin="841,453,0,0" VerticalAlignment="Top" Width="175"/>
     </Grid>
 </Window>
