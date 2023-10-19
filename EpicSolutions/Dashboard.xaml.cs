@@ -21,12 +21,13 @@ namespace EpicSolutions
     public partial class Dashboard : Window
     {
         dbFunctions dbManager;
-
+        string user;
         
-        public Dashboard(dbFunctions dbManager)
+        public Dashboard(string user, dbFunctions dbManager)
         {
             InitializeComponent();
             this.dbManager = dbManager;
+            this.user = user;
 
             List<ChartData> barChartData = GetBarChartDataFromDatabase();
             var barSeries = new BarSeries
@@ -100,5 +101,11 @@ namespace EpicSolutions
             return chartData;
         }
 
+        private void btHome_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage mp = new mainPage(user, dbManager);
+            mp.Show();
+            this.Hide();
+        }
     }
 }

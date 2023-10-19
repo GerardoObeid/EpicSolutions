@@ -34,6 +34,8 @@
         <syncfusion:SfChart x:Name="pieChart" HorizontalAlignment="Right" Margin="0,82,0,0" VerticalAlignment="Top" Height="500" Width="619"/>
         <Label Content="Top 8 áreas con más pedidos" HorizontalAlignment="Left" Margin="857,82,0,0" VerticalAlignment="Top" Height="53" Width="288" FontFamily="Arial Rounded MT Bold" FontSize="16" FontWeight="Bold"/>
         <Label Content="Top 10 proveedores con más pedidos" HorizontalAlignment="Left" Margin="130,88,0,0" VerticalAlignment="Top" Height="53" Width="338" FontFamily="Arial Rounded MT Bold" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click"/>
+        <Image HorizontalAlignment="Left" Height="80" Margin="49,-3,0,0" VerticalAlignment="Top" Width="90" Source="/logo.png"/>
 
     </Grid>
 </Window>

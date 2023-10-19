@@ -33,14 +33,16 @@ namespace EpicSolutions
 
         private void btSeguimiento_Click(object sender, RoutedEventArgs e)
         {
-            FollowUp fp = new FollowUp(dbManager);
-            fp.Show();  
+            FollowUp fp = new FollowUp(user, dbManager);
+            fp.Show();
+            this.Hide();
         }
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
             Register reg = new Register(user, dbManager);
             reg.Show();
+            this.Hide();
         }
 
         private void btLogOut_Click(object sender, RoutedEventArgs e)
@@ -53,20 +55,23 @@ namespace EpicSolutions
         //Pedidos button
         private void btRegistrar_Copy_Click(object sender, RoutedEventArgs e)
         {
-            Active ac = new Active();   
+            Active ac = new Active(user, dbManager);   
             ac.Show();
+            this.Hide();
         }
 
         private void btProveedores_Click(object sender, RoutedEventArgs e)
         {
-            Proveedores p = new Proveedores(dbManager);
+            Proveedores p = new Proveedores(user, dbManager);
             p.Show  ();
+            this.Hide();
         }
 
         private void btDasboard_Click(object sender, RoutedEventArgs e)
         {
-            Dashboard db = new Dashboard(dbManager);
+            Dashboard db = new Dashboard(user, dbManager);
             db.Show();
+            this.Hide();
         }
     }
 }

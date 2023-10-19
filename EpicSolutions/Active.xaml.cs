@@ -19,14 +19,25 @@ namespace EpicSolutions
     /// </summary>
     public partial class Active : Window
     {
-        public Active()
+        string user;
+        dbFunctions dbManager;
+        public Active(string user, dbFunctions dbManager)
         {
+            this.user = user;
+            this.dbManager = dbManager;
             InitializeComponent();
         }
 
         private void btRegistrar_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btHome_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage mp = new mainPage(user, dbManager);
+            mp.Show();
+            this.Hide();
         }
     }
 }

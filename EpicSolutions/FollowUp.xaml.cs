@@ -20,6 +20,7 @@ namespace EpicSolutions
     public partial class FollowUp : Window
     {
         dbFunctions dbManager;
+        string user;
         List<Dictionary<string, string>> res;
         List<RadioButton> radioButtons = new List<RadioButton>();
         List<RadioButton> operaciones;
@@ -27,12 +28,12 @@ namespace EpicSolutions
         int selProv = -1;
         int selOp = -1;
 
-        public FollowUp(dbFunctions dbManager)
+        public FollowUp(string user, dbFunctions dbManager)
         {
             InitializeComponent();
 
             this.dbManager = dbManager;
-
+            this.user = user;
             operaciones = new List<RadioButton>() {rbProductos, rbServicios, rbBajaProd, rbBajaServicios };
             res = dbManager.makeQuery("SELECT distinct(area) from proveedor");
             scroll.Visibility = Visibility.Collapsed;
@@ -109,6 +110,11 @@ namespace EpicSolutions
                         break;
                     case 3:
                         tbVisualizacion.Visibility = Visibility.Collapsed;
+                        query = $"select b.* from proveedor p inner join " +
+                           $"bien b on p.idProveedor=b.idProveedor " +
+                           $"where b.tipo='servicio' and p.idCliente=(SELECT idCliente " +
+                           $"FROM cliente WHERE nombre ='{radioButtons[selProv].Content.ToString()}');";
+                        tbVisualizacion.Text = processRes(dbManager.makeQuery(query));
                         MessageBox.Show("Baja de productos de proveedor");
                     break;
                     case 4:
@@ -153,6 +159,13 @@ namespace EpicSolutions
             tbVisualizacion.Visibility = Visibility.Collapsed;
             scroll.Visibility = Visibility.Collapsed;
 
+        }
+
+        private void btHome_Click_1(object sender, RoutedEventArgs e)
+        {
+            mainPage mp = new mainPage(user, dbManager);
+            mp.Show();
+            this.Hide();
         }
     }
 }
