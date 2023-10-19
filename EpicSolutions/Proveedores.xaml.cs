@@ -86,7 +86,6 @@ namespace EpicSolutions
                         }
                     }
                     tbInfoProveedor.Text = stb.ToString();
-                    rInfoContrast.Visibility = Visibility.Visible;
                 }
                 rb.IsChecked = false;
 

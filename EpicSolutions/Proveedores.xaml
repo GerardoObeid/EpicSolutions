@@ -21,12 +21,12 @@
         <ListBox x:Name="lboxProveedores" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="147,356,799,105" Background="{x:Null}" SelectionChanged="lboxProveedores_SelectionChanged"/>
         <ComboBox x:Name="cbAreas" HorizontalAlignment="Left" Margin="148,220,0,0" VerticalAlignment="Top" Width="255" Height="36" SelectionChanged="cbAreas_SelectionChanged"/>
         <Label x:Name="lbAreas" Content="Seleccione un área:" HorizontalAlignment="Left" Margin="152,172,0,0" VerticalAlignment="Top" FontSize="20" Width="207"/>
-        <TextBlock x:Name="tbInfoProveedor" HorizontalAlignment="Left" Margin="846,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="348" Width="335" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock x:Name="tbInfoProveedor" HorizontalAlignment="Left" Margin="575,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="276" Width="606" FontFamily="Times New Roman" FontSize="18"/>
         <Label x:Name="lbPoveedoresTitulo" Content="PROVEEDORES" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
         <Label x:Name="lbAreas_Copy" Content="Seleccione un proveedor:" HorizontalAlignment="Left" Margin="149,0,0,0" VerticalAlignment="Center" FontSize="20" Width="277"/>
-        <Label x:Name="lbProveedorSeleccionado" Content="" HorizontalAlignment="Left" Margin="809,206,0,0" VerticalAlignment="Top" Width="297" FontFamily="Times New Roman" FontSize="18"/>
+        <Label x:Name="lbProveedorSeleccionado" Content="" HorizontalAlignment="Left" Margin="557,187,0,0" VerticalAlignment="Top" Width="411" FontFamily="Times New Roman" FontSize="22" Height="47"/>
         <Button x:Name="btSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="274,546,0,0" VerticalAlignment="Top" Height="44" Width="83" Background="#FF228BE8" Click="btSeleccionar_Click"/>
-        <Rectangle x:Name="rInfoContrast" HorizontalAlignment="Left" Height="367" Margin="791,206,0,0" Stroke="Black" VerticalAlignment="Top" Width="390" Fill="#FFFDFDFD" Opacity="0.2" Visibility="Hidden" RadiusX="20" RadiusY="20"/>
+        <Rectangle x:Name="rInfoContrast" HorizontalAlignment="Left" Height="362" Margin="539,182,0,0" Stroke="Black" VerticalAlignment="Top" Width="642" Fill="#FFFDFDFD" Opacity="0.2" Visibility="Visible" RadiusX="20" RadiusY="20"/>
         <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click"/>
         <Image HorizontalAlignment="Left" Height="80" Margin="49,-3,0,0" VerticalAlignment="Top" Width="90" Source="/logo3.png"/>
 
