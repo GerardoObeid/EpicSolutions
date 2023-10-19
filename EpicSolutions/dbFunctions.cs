@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 
 namespace EpicSolutions
 {
@@ -79,26 +81,65 @@ namespace EpicSolutions
             }
             else
             {
-                SqlDataReader read = cmd.ExecuteReader();
-
-                while (read.Read())
+                try
                 {
-                    Dictionary<string, string> resultDictionary = new Dictionary<string, string>();
-                    for (int i = 0; i < read.FieldCount; i++)
-                    {
-                        string columnName = read.GetName(i);
-                        string columnValue = read[i].ToString();
-                        resultDictionary[columnName] = columnValue;
-                    }
-                    resultList.Add(resultDictionary);
-                }
 
-                read.Close();
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        Dictionary<string, string> resultDictionary = new Dictionary<string, string>();
+                        for (int i = 0; i < read.FieldCount; i++)
+                        {
+                            string columnName = read.GetName(i);
+                            string columnValue = read[i].ToString();
+                            resultDictionary[columnName] = columnValue;
+                        }
+                        resultList.Add(resultDictionary);
+                    }
+
+                    read.Close();
+                }
+                catch(Exception ex)
+                {
+                    throw new Exception(ex.ToString());
+                }
+               
             }
 
             return resultList;
         }
 
+        public DataTable formatForGrid(List<Dictionary<string, string>> res)
+        {
+            DataTable dataTable = new DataTable();
+
+            var uniqueKeys = res.SelectMany(dict => dict.Keys).Distinct().ToList();
+            foreach (var key in uniqueKeys)
+            {
+                dataTable.Columns.Add(key, typeof(string));
+            }
+
+            // Add data to the DataTable
+            foreach (var dict in res)
+            {
+                DataRow row = dataTable.NewRow();
+                foreach (var key in uniqueKeys)
+                {
+                    if (dict.ContainsKey(key))
+                    {
+                        row[key] = dict[key];
+                    }
+                    else
+                    {
+                        row[key] = "";
+                    }
+                }
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
         public void close()
         {
             conn.Close();

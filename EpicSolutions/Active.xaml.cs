@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,16 @@ namespace EpicSolutions
             this.user = user;
             this.dbManager = dbManager;
             InitializeComponent();
+            string query = "SELECT ped.idPedido as ID_Pedido, ped.fecha_creacion as Fecha_Creación," +
+                "ped.fecha_entrega as Fecha_Entrega, ped.monto as Monto, ped.cantidad as Cantidad, ped.comentarios as Comentarios," +
+                "c.nombre as Nombre_Cliente, b.nombre as Nombre_Bien " +
+                "FROM pedido ped INNER JOIN bien b ON b.clave=ped.claveBien " +
+                "INNER JOIN cliente c on c.idCliente=ped.idCliente " +
+                "WHERE fecha_entrega >= GETDATE()";
+            
+            DataTable dt = dbManager.formatForGrid(dbManager.makeQuery(query));
+          
+            gridActiveOrders.ItemsSource = dt.DefaultView;
         }
 
 
@@ -35,6 +46,11 @@ namespace EpicSolutions
             mainPage mp = new mainPage(user, dbManager);
             mp.Show();
             this.Hide();
+        }
+
+        private void gridActiveOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
