@@ -34,7 +34,7 @@ namespace EpicSolutions
 
             this.dbManager = dbManager;
             this.user = user;
-            operaciones = new List<RadioButton>() {rbProductos, rbServicios, rbBajaProd, rbBajaServicios };
+            operaciones = new List<RadioButton>() {rbProductos, rbServicios};
             res = dbManager.makeQuery("SELECT distinct(area) from proveedor");
             scroll.Visibility = Visibility.Collapsed;
             tbVisualizacion.Visibility = Visibility.Collapsed;
@@ -108,19 +108,6 @@ namespace EpicSolutions
                             $"FROM cliente WHERE nombre ='{radioButtons[selProv].Content.ToString()}');";
                         tbVisualizacion.Text = processRes(dbManager.makeQuery(query));
                         break;
-                    case 3:
-                        tbVisualizacion.Visibility = Visibility.Collapsed;
-                        query = $"select b.* from proveedor p inner join " +
-                           $"bien b on p.idProveedor=b.idProveedor " +
-                           $"where b.tipo='servicio' and p.idCliente=(SELECT idCliente " +
-                           $"FROM cliente WHERE nombre ='{radioButtons[selProv].Content.ToString()}');";
-                        tbVisualizacion.Text = processRes(dbManager.makeQuery(query));
-                        MessageBox.Show("Baja de productos de proveedor");
-                    break;
-                    case 4:
-                        tbVisualizacion.Visibility = Visibility.Collapsed;
-                        MessageBox.Show("Baja de servicios de proveedor");
-                    break;
                 }
             }
            
