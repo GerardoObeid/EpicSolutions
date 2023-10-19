@@ -13,7 +13,7 @@
                 <ImageBrush ImageSource="/mp.jpeg" Stretch="UniformToFill" Opacity="0.2"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
+        <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1254">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFD6E8A3"/>
@@ -30,5 +30,7 @@
         <Label x:Name="lbProveedorSeleccionado" Content="" HorizontalAlignment="Left" Margin="809,206,0,0" VerticalAlignment="Top" Width="297" FontFamily="Times New Roman" FontSize="18"/>
         <Button x:Name="btSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="274,546,0,0" VerticalAlignment="Top" Height="44" Width="83" Background="#FF228BE8" Click="btSeleccionar_Click"/>
         <Rectangle x:Name="rInfoContrast" HorizontalAlignment="Left" Height="367" Margin="791,206,0,0" Stroke="Black" VerticalAlignment="Top" Width="390" Fill="#FFFDFDFD" Opacity="0.2" Visibility="Hidden" RadiusX="20" RadiusY="20"/>
+        <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click"/>
+
     </Grid>
 </Window>

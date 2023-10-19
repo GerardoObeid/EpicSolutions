@@ -20,6 +20,7 @@ namespace EpicSolutions
     public partial class FollowUp : Window
     {
         dbFunctions dbManager;
+        string user;
         List<Dictionary<string, string>> res;
         List<RadioButton> radioButtons = new List<RadioButton>();
         List<RadioButton> operaciones;
@@ -27,12 +28,12 @@ namespace EpicSolutions
         int selProv = -1;
         int selOp = -1;
 
-        public FollowUp(dbFunctions dbManager)
+        public FollowUp(string user, dbFunctions dbManager)
         {
             InitializeComponent();
 
             this.dbManager = dbManager;
-
+            this.user = user;
             operaciones = new List<RadioButton>() {rbProductos, rbServicios, rbBajaProd, rbBajaServicios };
             res = dbManager.makeQuery("SELECT distinct(area) from proveedor");
             scroll.Visibility = Visibility.Collapsed;
@@ -158,6 +159,13 @@ namespace EpicSolutions
             tbVisualizacion.Visibility = Visibility.Collapsed;
             scroll.Visibility = Visibility.Collapsed;
 
+        }
+
+        private void btHome_Click_1(object sender, RoutedEventArgs e)
+        {
+            mainPage mp = new mainPage(user, dbManager);
+            mp.Show();
+            this.Hide();
         }
     }
 }

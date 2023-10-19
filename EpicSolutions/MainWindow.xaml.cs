@@ -23,9 +23,9 @@ namespace EpicSolutions
         public MainWindow()
         {
             InitializeComponent();
-            
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1JpRGVGfV5yd0VPalxWTnVbUj0eQnxTdEZiWX5XcHZVT2FeUkV/WQ==");
 
-    }
+        }
         private void ShowPassword_Checked(object sender, RoutedEventArgs e)
         {
             tbpasswordText.Text = tbpassword.Password;

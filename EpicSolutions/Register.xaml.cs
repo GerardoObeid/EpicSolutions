@@ -204,5 +204,22 @@ namespace EpicSolutions
             cbPermisos.SelectedIndex = -1;
             stPermisos.Visibility = Visibility.Collapsed;
         }
+
+        private void btLimpiarPermisos_Click(object sender, RoutedEventArgs e)
+        {
+            cbPermisos.SelectedIndex -= 1;
+        }
+
+        private void btLimpiarBajas_Click(object sender, RoutedEventArgs e)
+        {
+            cbRestablecerBaja.SelectedIndex = -1;
+        }
+
+        private void btHome_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage mp = new mainPage(user, dbManager);
+            mp.Show();
+            this.Hide();
+        }
     }
 }

@@ -20,14 +20,17 @@ namespace EpicSolutions
     public partial class Proveedores : Window
     {
         dbFunctions dbManager;
+        string user;
         List<Dictionary<string, string>> res;
         List <RadioButton> radioButtons = new List<RadioButton>();
         StringBuilder stb = new StringBuilder();
 
-        public Proveedores(dbFunctions dbManager)
+        public Proveedores(string user, dbFunctions dbManager)
         {
             InitializeComponent();
             this.dbManager = dbManager;
+            this.user = user;   
+
             res = dbManager.makeQuery("SELECT distinct(area) from proveedor");
             foreach (Dictionary <string, string> i in res)
             {
@@ -89,6 +92,13 @@ namespace EpicSolutions
 
             }
             
+        }
+
+        private void btHome_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage mp = new mainPage(user, dbManager);
+            mp.Show();
+            this.Hide();
         }
     }
 }

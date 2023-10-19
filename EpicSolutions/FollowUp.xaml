@@ -59,5 +59,7 @@
         <ComboBox x:Name="cbBajas" HorizontalAlignment="Left" Height="30" Margin="872,203,0,0" VerticalAlignment="Top" Width="274" Visibility="Collapsed"/>
         <Label x:Name="lbBajas" Content="Seleccione el bien:" HorizontalAlignment="Left" Margin="874,150,0,0" VerticalAlignment="Top" FontSize="20" Width="195" Visibility="Collapsed"/>
         <Button x:Name="btBajas" Content="Eliminar" HorizontalAlignment="Left" Margin="1107,488,0,0" VerticalAlignment="Top" Height="46" Width="80" Background="#FFED3434" Visibility="Collapsed"/>
+        <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click_1"/>
+
     </Grid>
 </Window>
