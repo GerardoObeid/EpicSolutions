@@ -17,12 +17,9 @@
                 <SolidColorBrush Color="#FFE9F068" Opacity="0.5"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Center" Height="76" Margin="0,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1378">
+        <Rectangle HorizontalAlignment="Left" Height="76" Margin="-14,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1272">
             <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFD6E8A3"/>
-                    <GradientStop Color="#FFECEDEB" Offset="1"/>
-                </LinearGradientBrush>
+                <ImageBrush ImageSource="/nav2.png" Opacity="0.2" Stretch="UniformToFill"/>
             </Rectangle.Fill>
         </Rectangle>
         <Label x:Name="tbManager" Content="USER MANAGMENT" HorizontalAlignment="Center" Margin="0,13,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontWeight="Bold" FontSize="36" Height="70"/>
@@ -65,7 +62,7 @@
         <Button x:Name="btLimpiarBajas" Content="Limpiar" HorizontalAlignment="Left" Height="22" Margin="978,474,0,0" VerticalAlignment="Top" Width="57" Background="{x:Null}" BorderBrush="{x:Null}" Click="btLimpiarBajas_Click"/>
         <Button x:Name="btLimpiarPermisos" Content="Limpiar" HorizontalAlignment="Left" Height="22" Margin="978,244,0,0" VerticalAlignment="Top" Width="57" Background="{x:Null}" BorderBrush="{x:Null}" Click="btLimpiarPermisos_Click"/>
         <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click"/>
-        <Image HorizontalAlignment="Left" Height="80" Margin="49,-3,0,0" VerticalAlignment="Top" Width="90" Source="/logo.png"/>
+        <Image HorizontalAlignment="Left" Height="80" Margin="49,-3,0,0" VerticalAlignment="Top" Width="90" Source="/logo3.png"/>
 
     </Grid>
 </Window>
