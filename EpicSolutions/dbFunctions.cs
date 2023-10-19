@@ -99,7 +99,10 @@ namespace EpicSolutions
             return resultList;
         }
 
-
+        public void close()
+        {
+            conn.Close();
+        }
         public int handleLogin(String user, String pwd)
         {
             int ans = 0;

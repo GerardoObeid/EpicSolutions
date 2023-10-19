@@ -93,6 +93,7 @@ namespace EpicSolutions
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            dataBaseManager.close();
             System.Windows.Application.Current.Shutdown();
         }
 
