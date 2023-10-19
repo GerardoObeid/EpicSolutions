@@ -10,6 +10,8 @@
   <ItemGroup>
     <None Remove="epicmain.jpg.png" />
     <None Remove="logo.png" />
+    <None Remove="logo2.jpeg" />
+    <None Remove="logo3.png" />
     <None Remove="mp.jpeg" />
   </ItemGroup>
 
@@ -22,6 +24,8 @@
   <ItemGroup>
     <Resource Include="epicmain.jpg.png" />
     <Resource Include="logo.png" />
+    <Resource Include="logo2.jpeg" />
+    <Resource Include="logo3.png" />
     <Resource Include="mp.jpeg" />
   </ItemGroup>
 
