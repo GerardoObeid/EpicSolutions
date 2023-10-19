@@ -35,8 +35,8 @@ namespace EpicSolutions
 
         private void btHome_Click(object sender, RoutedEventArgs e)
         {
-            Dashboard db = new Dashboard(user, dbManager);
-            db.Show();
+            mainPage mp = new mainPage(user, dbManager);
+            mp.Show();
             this.Hide();
         }
     }

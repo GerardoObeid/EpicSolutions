@@ -31,6 +31,7 @@
         <Button x:Name="btSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="274,546,0,0" VerticalAlignment="Top" Height="44" Width="83" Background="#FF228BE8" Click="btSeleccionar_Click"/>
         <Rectangle x:Name="rInfoContrast" HorizontalAlignment="Left" Height="367" Margin="791,206,0,0" Stroke="Black" VerticalAlignment="Top" Width="390" Fill="#FFFDFDFD" Opacity="0.2" Visibility="Hidden" RadiusX="20" RadiusY="20"/>
         <Button x:Name="btHome" Content="🏠" HorizontalAlignment="Left" Height="62" Margin="1088,7,0,0" VerticalAlignment="Top" Width="98" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2F793F" FontSize="25" Click="btHome_Click"/>
+        <Image HorizontalAlignment="Left" Height="80" Margin="49,-3,0,0" VerticalAlignment="Top" Width="90" Source="/logo.png"/>
 
     </Grid>
 </Window>
