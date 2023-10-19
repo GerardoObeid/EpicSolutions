@@ -13,6 +13,7 @@
     <None Remove="logo2.jpeg" />
     <None Remove="logo3.png" />
     <None Remove="mp.jpeg" />
+    <None Remove="nav2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,7 @@
     <Resource Include="logo2.jpeg" />
     <Resource Include="logo3.png" />
     <Resource Include="mp.jpeg" />
+    <Resource Include="nav2.png" />
   </ItemGroup>
 
 </Project>

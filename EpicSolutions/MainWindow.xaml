@@ -42,6 +42,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="823,192,0,0" TextWrapping="Wrap" Text="En el vasto universo de EPIC Solutions, las estrellas de la comunidad brillan como luces de esperanza, iluminando caminos hacia un mañana lleno de oportunidades y prosperidad." VerticalAlignment="Top" Height="311" Width="336" FontSize="25" FontWeight="Bold" TextAlignment="Center" OpacityMask="#FFF7F9F5" Foreground="#FF131C15"/>
         <Button x:Name="btActualizar" Content="Actualizar Contraseña" HorizontalAlignment="Left" Margin="369,374,0,0" VerticalAlignment="Top" Height="45" Width="125" Background="#FF1C7EF3" Visibility="Collapsed" Click="btActualizar_Click"/>
 
+        <Image HorizontalAlignment="Left" Height="99" Margin="1104,3,0,0" VerticalAlignment="Top" Width="118" Source="/logo3.png" RenderTransformOrigin="2.33,0.952"/>
+        <Image HorizontalAlignment="Left" Height="99" Margin="79,0,0,0" VerticalAlignment="Top" Width="118" Source="/logo.png" RenderTransformOrigin="2.33,0.952"/>
 
     </Grid>
 </Window>
