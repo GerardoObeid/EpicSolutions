@@ -161,7 +161,7 @@ namespace EpicSolutions
                 }
                 else
                 {
-                    string hashedPassword = queryResult[0].GetValueOrDefault("hashedPassword");
+                    string hashedPassword = queryResult[0]["hashedPassword"];
 
                     if (VerifyPassword(pwd, hashedPassword))
                     {
