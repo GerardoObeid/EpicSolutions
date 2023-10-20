@@ -18,13 +18,6 @@ CREATE TABLE cliente (
     FOREIGN KEY (IdCentro) REFERENCES centroDeServicio(idCentro)
 );
 
--- Creación de la tabla telefono
-CREATE TABLE telefono (
-    telefono VARCHAR(15) PRIMARY KEY,
-    idCliente INT,
-    FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)
-);
-
 
 -- Creación de la tabla bien
 CREATE TABLE bien (
@@ -32,6 +25,7 @@ CREATE TABLE bien (
     nombre VARCHAR(255),
     precio DECIMAL(10, 2),
 	idProveedor int,
+	tipo  VARCHAR(50),
 	 FOREIGN KEY (idproveedor) REFERENCES proveedor(idProveedor)
 );
 
@@ -66,10 +60,12 @@ CREATE TABLE permiso (
 -- Creación de la tabla proveedor
 CREATE TABLE proveedor (
     idProveedor INT PRIMARY KEY,
+	idCliente INT,
     nombre VARCHAR(255),
     direccion VARCHAR(255),
     telefono VARCHAR(15),
-	hashedPassword VARCHAR(255),
+	area VARCHAR(50),
+	FOREIGN KEY (idCliente) REFERENCES cliente(idCliente)
 );
 
 -- Creación de la tabla pedido
