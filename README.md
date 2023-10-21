@@ -43,5 +43,5 @@ Nicolas Aceves
 
 Patricio Silva
 
-### Creative & Desing Leader  
+### Creative & Design Leader  
 Maria Fernanda Ramírez
