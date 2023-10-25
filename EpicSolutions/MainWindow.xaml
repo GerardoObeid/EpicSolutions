@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="http://metro.mahapps.com/winf/xaml/controls"
         xmlns:local="clr-namespace:EpicSolutions"
         mc:Ignorable="d"
         Title="MainWindow" Height="658" Width="1263" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
@@ -36,6 +37,7 @@
         </Rectangle>
         <StackPanel Margin="40,242,779,270">
             <TextBox x:Name="tbUsuario" Width="292" Height="39" Margin="159,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"/>
+
             <PasswordBox x:Name="tbpassword" PasswordChar="*" Width="292" Height="39" Margin="159,10,0,0" FontSize="18"/>
             <TextBox x:Name="tbpasswordText" Visibility="Collapsed" Width="292" Height="39" Margin="159,10,0,0"/>
         </StackPanel>

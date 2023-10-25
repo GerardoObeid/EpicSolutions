@@ -42,8 +42,12 @@ namespace EpicSolutions
 
         private void btLogin_Click(object sender, RoutedEventArgs e)
         {
-            tbpasswordText.Text = tbpassword.Password;
-            int login = dataBaseManager.handleLogin(tbUsuario.Text, tbpassword.Password);
+            string password;
+            if (showPassword.IsChecked == true)
+                password = tbpasswordText.Text;
+            else
+                password = tbpassword.Password;
+            int login = dataBaseManager.handleLogin(tbUsuario.Text, password);
             if (login == 0)
             {
                 MessageBox.Show("Error al conectarse a la base de datos. \nContactar administrador");
@@ -82,7 +86,12 @@ namespace EpicSolutions
         }
         private void btActualizar_Click(object sender, RoutedEventArgs e)
         {
-            string query = $"UPDATE usuario set hashedPassword='{dataBaseManager.HashPassword(tbpassword.Password)}'," +
+            string password;
+            if (showPassword.IsChecked == true)
+                password = tbpasswordText.Text;
+            else
+                password = tbpassword.Password;
+            string query = $"UPDATE usuario set hashedPassword='{dataBaseManager.HashPassword(password)}'," +
                 $"tempPassword=0 WHERE nomUsuario='{tbUsuario.Text}'";
             dataBaseManager.makeQuery(query, true);
 

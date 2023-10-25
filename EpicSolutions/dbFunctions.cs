@@ -23,7 +23,7 @@ namespace EpicSolutions
             SqlConnection cnn;
             try
             {
-                cnn = new SqlConnection("Data Source=DESKTOP-L5JL3C0\\SQLEXPRESS01;Initial Catalog=db_servicio;Integrated Security=True");
+                cnn = new SqlConnection("Data Source=DESKTOP-L5JL3C0\\SQLEXPRESS01;Initial Catalog=db_EpicSolutions;Integrated Security=True");
                 cnn.Open();
             }
             catch (Exception ex)

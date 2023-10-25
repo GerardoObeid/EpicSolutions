@@ -7,7 +7,7 @@ CREATE TABLE centroDeServicio (
 
 -- Creación de la tabla cliente
 CREATE TABLE cliente (
-    idCliente INT PRIMARY KEY,
+    idCliente INT  IDENTITY(1, 1) PRIMARY KEY,
     IdCentro INT,
     nombre VARCHAR(255),
     telefono VARCHAR(15),
@@ -31,21 +31,19 @@ CREATE TABLE proveedor (
 
 -- Creación de la tabla bien
 CREATE TABLE bien (
-    clave INT PRIMARY KEY,
+    clave INT IDENTITY(1, 1) PRIMARY KEY,
     nombre VARCHAR(255),
     precio DECIMAL(10, 2),
-	idProveedor int,
-	tipo  VARCHAR(50),
-	 FOREIGN KEY (idproveedor) REFERENCES proveedor(idProveedor)
+    idProveedor INT,
+    tipo VARCHAR(50),
+    FOREIGN KEY (idProveedor) REFERENCES proveedor(idProveedor)
 );
-
 -- Creación de la tabla fotos
 CREATE TABLE fotos (
-    fotos VARCHAR(255) PRIMARY KEY,
+    fotos VARBINARY(MAX),
     clave INT,
     FOREIGN KEY (clave) REFERENCES bien(clave)
 );
-
 
 
 -- Creación de la tabla usuario
@@ -56,6 +54,7 @@ CREATE TABLE usuario (
     telefono VARCHAR(15),
     correo VARCHAR(255),
 	hashedPassword VARCHAR(255),
+	tempPassword SMALLINT,
     FOREIGN KEY (idCentro) REFERENCES centroDeServicio(idCentro)
 );
 
@@ -69,7 +68,7 @@ CREATE TABLE permiso (
 
 -- Creación de la tabla pedido
 CREATE TABLE pedido (
-    idPedido INT PRIMARY KEY,
+    idPedido INT IDENTITY(1, 1) PRIMARY KEY,
     fecha_creacion DATE,
 	fecha_entrega DATE,
     claveBien INT,
