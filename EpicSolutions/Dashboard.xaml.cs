@@ -63,7 +63,7 @@ namespace EpicSolutions
         {
             string query = "SELECT TOP 10 pr.nombre AS XProperty, COUNT(*) AS YProperty FROM pedido ped " +
                            "INNER JOIN proveedor pr ON pr.idProveedor = ped.idProveedor " +
-                           "GROUP BY pr.nombre";
+                           "GROUP BY pr.nombre ORDER BY YProperty DESC";
             var queryResult = dbManager.makeQuery(query);
 
             List<ChartData> chartData = new List<ChartData>();

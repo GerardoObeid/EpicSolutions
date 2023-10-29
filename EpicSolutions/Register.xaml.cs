@@ -238,7 +238,8 @@ namespace EpicSolutions
 
                 if (permisos[i].IsChecked == true && !permisosSel.Contains(i))
                 {
-                    dbManager.makeQuery($"INSERT INTO permiso(idPermiso, nomUsuario) VALUES({ i}, '{cbPermisos.SelectedValue}')", true);
+                    res = dbManager.makeQuery($"INSERT INTO permiso(idPermiso, nomUsuario) VALUES({i}, '{cbPermisos.SelectedValue}')", true);
+                    Clipboard.SetText($"INSERT INTO permiso(idPermiso, nomUsuario) VALUES({i}, '{cbPermisos.SelectedValue}')");
                 }
                 if (permisos[i].IsChecked == false && permisosSel.Contains(i))
                 {

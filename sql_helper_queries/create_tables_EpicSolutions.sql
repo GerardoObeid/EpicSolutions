@@ -60,7 +60,7 @@ CREATE TABLE usuario (
 
 -- Creación de la tabla permiso
 CREATE TABLE permiso (
-    idPermiso INT PRIMARY KEY,
+    idPermiso INT,
     nomUsuario VARCHAR(55),
     FOREIGN KEY (nomUsuario) REFERENCES usuario(nomUsuario)
 );

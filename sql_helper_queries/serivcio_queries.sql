@@ -1,14 +1,7 @@
 INSERT INTO centroDeServicio(idCentro, nombre, direccion) VALUES (10072004, 'Epic Solutions', 'Rio Hondo, ITAM');
 
-USE db_EpicSolutions
-
-
 INSERT INTO usuario (nomUsuario, idCentro, nombre, telefono, correo, hashedPassword, tempPassword) VALUES ('GerardoObeid', 10072004, 'Gerardo Obeid Guzmán','5510070655', 'obeidgerardo@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',0);
-INSERT INTO permiso (nomUsuario, idPermiso) VALUES 
-	('GerardoObeid', 0),
-	('GerardoObeid', 1),
-	('GerardoObeid', 2);
-update cliente set hashedPassword='8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'
+INSERT INTO permiso (nomUsuario, idPermiso) VALUES ('GerardoObeid', 0),	('GerardoObeid', 1),('GerardoObeid', 2);
 
 INSERT INTO cliente (IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (10072004, 'Lupita Gutierrez','5554344342', 'lupisgut@gmail.com', 'Coyoacan esquina con Iglesia #13', 0, 'prueba');
 INSERT INTO cliente (IdCentro, nombre, telefono, correo, direccion, beneficio, hashedPassword) VALUES (10072004, 'Juan Armando Ruiz','5554344342', 'ruizarmado@gmail.com', 'Coyoacan Cerro del Agua #23', 0, 'prueba');
@@ -50,6 +43,7 @@ INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area)
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (150, 15, 'Luces y Sonido Eventos','5554344342', 'Coyoacan Luces y Sonido #15', 'eventos');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (160, 16, 'Decoración Globos','5554344342', 'Álvaro Obregón Decoraciones con Globos #22', 'decoración');
 INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (170, 17, 'Música en Vivo','5554344342', 'Coyoacan Escenario Musical #29', 'música');
+INSERT INTO proveedor(idProveedor, idCliente, nombre, telefono, direccion, area) VALUES (230, 23, 'Gerardo´s technology','5554344342', 'Centro de Coyoacan con Iglesia #13', 'comida');
 
 
 
@@ -92,8 +86,9 @@ VALUES
 	   ( 'Grupo Musical en Vivo', 199.99,  170, 'servicio');
 -----------------------------------------------------------------------------------------------------------
 
+-- la clave para entrar es admin (tanto para usuarios como para clientes)
+update cliente set hashedPassword='8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'
 
--- Pedidos para Cliente 18
 INSERT INTO pedido (fecha_creacion, fecha_entrega, claveBien, idProveedor, idCliente, monto, cantidad, comentarios)
 VALUES 
 ('2023-10-16', '2023-10-20', 8, 20, 18, 100.00, 5, 'Entrega estándar'),
@@ -117,22 +112,3 @@ VALUES
 ('2023-10-16', '2023-10-20', 11, 40, 11, 150.00, 6, 'Entrega con factura electrónica'),
 ('2023-10-16', '2023-10-19', 13, 50, 13, 85.25, 4, 'Entrega con notificación de SMS'),
 ('2023-10-16', '2023-10-18', 21, 90, 13, 220.50, 8, 'Entrega con seguimiento en línea');
-
-UPDATE pedido SET fecha_entrega = DATEADD(day, 10, fecha_entrega);
-
-SELECT * FROM pedido WHERE fecha_entrega >= GETDATE()
-SELECT TOP 8 area AS XProperty, COUNT(*) AS YProperty FROM pedido ped INNER JOIN proveedor p ON p.idProveedor = ped.idProveedor GROUP BY area ORDER BY YProperty desc
-select * from proveedor p inner join bien c on p.idProveedor=c.idProveedor inner join producto prod on prod.clave=c.clave where p.idCliente=(SELECT idCliente FROM cliente WHERE nombre = 'Lupita Gutierrez');
-
-SELECT ped.idPedido as ID_Pedido,ped.fecha_creacion as Fecha_Creación,
-                ped.fecha_entrega as Fecha_Entrega, ped.monto as Monto, ped.cantidad as Cantidad, ped.comentarios as Comentarios,
-                 c.nombre as Nombre_Cliente, b.nombre as Nombre_Bien
-                FROM pedido ped INNER JOIN bien b ON b.clave=ped.claveBien 
-                INNER JOIN cliente c on c.idCliente=ped.idCliente
-                WHERE fecha_entrega >= GETDATE()
-
-select * from cliente c inner join proveedor p on p.idCliente=c.idCliente;
-DBCC CHECKIDENT ('bien', RESEED, 36);
-select * from fotos
-select * from cliente
-use db_EpicSolutions
